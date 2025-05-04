@@ -298,7 +298,7 @@ const HighlightsSection = () => {
       </HighlightsItem>
       <HighlightsItem title="Top Speech Recognition">
         <Text color="muted" fontSize="lg">
-          Ranked 1st in speech recognition, Whisper technology is ranked the world's most accurate AI speech recognition (ASR), capable of detecting almost all languages and accents.
+          Ranked 1st in speech recognition, Whisper technology is ranked the world&apos;s most accurate AI speech recognition (ASR), capable of detecting almost all languages and accents.
         </Text>
       </HighlightsItem>
       <HighlightsItem title="Full Privacy">
