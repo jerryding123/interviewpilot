@@ -225,7 +225,7 @@ const HeroSection: React.FC = () => {
             title: '99% Accuracy',
             icon: FiHeadphones,
             description:
-              'Interview Pilot uses the world\'s ranked No. 1 ASR technology for speech recognition.',
+              'Interview Pilot uses the world&apos;s ranked No. 1 ASR technology for speech recognition.',
             iconPosition: 'left',
             delay: 0.8,
           },
