@@ -235,7 +235,7 @@ const HeroSection: React.FC = () => {
             title: '99+ Languages',
             icon: FiGlobe,
             description:
-              'Supports over 99 languages, Copilot will automatically generate responses in your language.',
+              'Supports over 99 languages, Copilot automatically generates responses in your language.',
             iconPosition: 'left',
             delay: 1,
           },
