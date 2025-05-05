@@ -70,9 +70,66 @@ import testimonials from '#data/testimonials'
 //  description: 'Free SaaS landingspage starter kit',
 // }
 
+const SystemStatus = () => (
+  <Box 
+    position="fixed"
+    top="80px"
+    left="50%"
+    transform="translateX(-50%)"
+    zIndex="1000"
+    px="3"
+    py="2"
+    borderRadius="full"
+    bg="rgba(255, 255, 255, 0.15)"
+    backdropFilter="blur(10px)"
+    border="1px solid rgba(255, 255, 255, 0.2)"
+    boxShadow="0 4px 6px rgba(0, 0, 0, 0.1)"
+    display="flex"
+    alignItems="center"
+    justifyContent="center"
+    gap="2"
+  >
+    <Box
+      w="8px"
+      h="8px"
+      borderRadius="full"
+      bg="green.400"
+      animation="statusPulse 2s infinite" // Changed animation name to "statusPulse"
+      alignSelf="center"
+      sx={{
+        '@keyframes statusPulse': { // Changed keyframes name to "statusPulse"
+          '0%': {
+            transform: 'scale(0.95)',
+            boxShadow: '0 0 0 0 rgba(72, 187, 120, 0.7)',
+          },
+          '70%': {
+            transform: 'scale(1)',
+            boxShadow: '0 0 0 10px rgba(72, 187, 120, 0)',
+          },
+          '100%': {
+            transform: 'scale(0.95)',
+            boxShadow: '0 0 0 0 rgba(72, 187, 120, 0)',
+          },
+        },
+      }}
+    />
+    <Text 
+      fontWeight="medium" 
+      color="white" 
+      fontSize="sm"
+      lineHeight="1"
+      alignSelf="center"
+    >
+      All Systems Online
+    </Text>
+  </Box>
+);
+
 const Home: NextPage = () => {
   return (
     <Box>
+      <SystemStatus />
+      
       <HeroSection />
 
       <HighlightsSection />
@@ -100,37 +157,37 @@ const HeroSection: React.FC = () => {
             px="0"
             title={
               <FallInPlace>
-                <Box as="span" position="relative" display="inline">
-                  <Box
-                    position="absolute"
-                    display="inline-block"
-                    left="-40px"
-                    top="50%"
-                    transform="translateY(-50%)"
-                    w={5}
-                    h={5}
-                    borderRadius="full"
-                    bg="green.400"
-                    animation="pulse 2s infinite"
-                    sx={{
-                      '@keyframes pulse': {
-                        '0%': {
-                          transform: 'translateY(-50%) scale(0.95)',
-                          boxShadow: '0 0 0 0 rgba(72, 187, 120, 0.7)',
-                        },
-                        '70%': {
-                          transform: 'translateY(-50%) scale(1)',
-                          boxShadow: '0 0 0 10px rgba(72, 187, 120, 0)',
-                        },
-                        '100%': {
-                          transform: 'translateY(-50%) scale(0.95)',
-                          boxShadow: '0 0 0 0 rgba(72, 187, 120, 0)',
-                        },
-                      },
-                    }}
-                  />
-                  Live AI
-                </Box>
+<Box as="span" position="relative" display="inline">
+  <Box
+    position="absolute"
+    display="inline-block"
+    right="-40px"  // Changed from left="-40px" to right="-40px"
+    top="50%"
+    transform="translateY(-50%)"
+    w={5}
+    h={5}
+    borderRadius="full"
+    bg="green.400"
+    animation="pulse 2s infinite"
+    sx={{
+      '@keyframes pulse': {
+        '0%': {
+          transform: 'translateY(-50%) scale(0.95)',
+          boxShadow: '0 0 0 0 rgba(72, 187, 120, 0.7)',
+        },
+        '70%': {
+          transform: 'translateY(-50%) scale(1)',
+          boxShadow: '0 0 0 10px rgba(72, 187, 120, 0)',
+        },
+        '100%': {
+          transform: 'translateY(-50%) scale(0.95)',
+          boxShadow: '0 0 0 0 rgba(72, 187, 120, 0)',
+        },
+      },
+    }}
+  />
+  Live AI
+</Box>
                 <Br /> Interview Copilot
               </FallInPlace>
             }
@@ -159,9 +216,9 @@ const HeroSection: React.FC = () => {
               </HStack>
 
               <ButtonGroup spacing={4} alignItems="center">
-                <ButtonLink colorScheme="primary" color="black" size="lg" href="https://apps.apple.com/us/app/interview-pilot-ai-copilot/id6743263009">
-                  Download
-                </ButtonLink>
+              <ButtonLink colorScheme="primary" color="black" size="lg" href="https://apps.apple.com/us/app/interview-pilot-ai-copilot/id6743263009" fontWeight="bold">
+  Download
+</ButtonLink>
                 <ButtonLink
                   size="lg"
                   href="#features"
