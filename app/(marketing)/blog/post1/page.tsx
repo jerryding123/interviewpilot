@@ -42,13 +42,13 @@ export default function BlogPost1() {
       </Heading>
       <Box mb={8}>
         <Text mb={4}>
-          Interview Coder gained significant attention after its creator, Chungin "Roy" Lee, a former Columbia University student, publicly demonstrated using the tool during technical interviews with major tech companies. Lee claimed that he successfully secured internship offers from companies including Amazon, Meta, TikTok, and Capital One using the tool.
+          Interview Coder gained significant attention after its creator, Chungin &quot;Roy&quot; Lee, a former Columbia University student, publicly demonstrated using the tool during technical interviews with major tech companies. Lee claimed that he successfully secured internship offers from companies including Amazon, Meta, TikTok, and Capital One using the tool.
         </Text>
         <Text mb={4}>
           The controversy escalated when Lee posted a video of himself using Interview Coder during an Amazon internship interview on YouTube. This public demonstration led to significant backlash, with Amazon attempting to have the video removed and reporting Lee to Columbia University.
         </Text>
         <Text mb={4}>
-          Columbia University subsequently took disciplinary action, initially placing Lee on probation for "facilitation of academic dishonesty." The situation further deteriorated when Lee published documents from his disciplinary record on social media, which resulted in his suspension from the university.
+          Columbia University subsequently took disciplinary action, initially placing Lee on probation for &quot;facilitation of academic dishonesty.&quot; The situation further deteriorated when Lee published documents from his disciplinary record on social media, which resulted in his suspension from the university.
         </Text>
       </Box>
       
@@ -72,7 +72,7 @@ export default function BlogPost1() {
           
           <Text mb={2} fontWeight="bold">Controversial Marketing:</Text>
           <Text mb={4} pl={4}>
-            The company has embraced a provocative marketing stance, positioning its tools not as educational aids but explicitly as tools to "cheat on everything," comparing itself to innovations like calculators and spellcheck that were initially considered forms of cheating.
+            The company has embraced a provocative marketing stance, positioning its tools not as educational aids but explicitly as tools to &quot;cheat on everything,&quot; comparing itself to innovations like calculators and spellcheck that were initially considered forms of cheating.
           </Text>
           
           <Text mb={2} fontWeight="bold">Industry Response:</Text>
@@ -87,13 +87,13 @@ export default function BlogPost1() {
       </Heading>
       <Box mb={8}>
         <Text mb={4}>
-          The Interview Coder controversy has sparked broader debates about the relevance and effectiveness of traditional technical interview methods, particularly "LeetCode-style" coding challenges. Critics argue these assessments often test memorization of specific algorithms rather than practical programming skills relevant to actual job requirements.
+          The Interview Coder controversy has sparked broader debates about the relevance and effectiveness of traditional technical interview methods, particularly &quot;LeetCode-style&quot; coding challenges. Critics argue these assessments often test memorization of specific algorithms rather than practical programming skills relevant to actual job requirements.
         </Text>
         <Text mb={4}>
           Some companies have already begun adapting their interview processes in response to these tools:
         </Text>
         <Box pl={6} mb={4}>
-          <Text mb={2}>• Amazon now requires candidates to confirm they aren't using external tools</Text>
+          <Text mb={2}>• Amazon now requires candidates to confirm they aren&apos;t using external tools</Text>
           <Text mb={2}>• Some organizations have returned to in-person whiteboard coding sessions</Text>
           <Text mb={2}>• Others are adopting pair programming on actual features rather than abstract problems</Text>
         </Box>
