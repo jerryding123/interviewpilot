@@ -14,7 +14,7 @@ export default function TermsPage() {
         </Text>
         
         <Text>
-          Interview Pilot is a brand owned by Liberace AI ("Company," "we," "us," "our"). Liberace AI operates the Interview Pilot iOS application and provides related products and services (collectively, the "Services"). These Terms of Service ("Terms") constitute a legally binding agreement between you ("you," "your") and Liberace AI, governing your access to and use of the Services. You agree that by downloading, installing, or accessing the Services, you have read, understood, and agreed to be bound by these Terms. IF YOU DO NOT AGREE WITH ALL OF THESE TERMS, THEN YOU ARE PROHIBITED FROM USING THE SERVICES AND MUST IMMEDIATELY DISCONTINUE USE.
+          Interview Pilot is a brand owned by Liberace AI (&quot;Company,&quot; &quot;we,&quot; &quot;us,&quot; &quot;our&quot;). Liberace AI operates the Interview Pilot iOS application and provides related products and services (collectively, the &quot;Services&quot;). These Terms of Service (&quot;Terms&quot;) constitute a legally binding agreement between you (&quot;you,&quot; &quot;your&quot;) and Liberace AI, governing your access to and use of the Services. You agree that by downloading, installing, or accessing the Services, you have read, understood, and agreed to be bound by these Terms. IF YOU DO NOT AGREE WITH ALL OF THESE TERMS, THEN YOU ARE PROHIBITED FROM USING THE SERVICES AND MUST IMMEDIATELY DISCONTINUE USE.
         </Text>
         
         <Box>
@@ -45,7 +45,7 @@ export default function TermsPage() {
           
           <Text fontWeight="bold" mt={3}>2.2 Payment Terms</Text>
           <Text>
-            All payments and subscriptions are processed through Apple's App Store. The subscription includes full access to Interview Pilot features, automatic updates, and customer support. By subscribing to our paid services, you agree to the App Store's payment terms and authorize Apple to charge your chosen payment method. Subscription management, including cancellation, is handled through your Apple ID account settings.
+            All payments and subscriptions are processed through Apple&apos;s App Store. The subscription includes full access to Interview Pilot features, automatic updates, and customer support. By subscribing to our paid services, you agree to the App Store&apos;s payment terms and authorize Apple to charge your chosen payment method. Subscription management, including cancellation, is handled through your Apple ID account settings.
           </Text>
         </Box>
         
@@ -82,7 +82,7 @@ export default function TermsPage() {
           
           <Text fontWeight="bold" mt={3}>5.1 Disclaimer of Warranties</Text>
           <Text>
-            THE SERVICES ARE PROVIDED ON AN "AS IS," "WITH ALL FAULTS," AND "AS AVAILABLE" BASIS. TO THE FULLEST EXTENT PERMISSIBLE PURSUANT TO APPLICABLE LAW, LIBERACE AI DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
+            THE SERVICES ARE PROVIDED ON AN &quot;AS IS,&quot; &quot;WITH ALL FAULTS,&quot; AND &quot;AS AVAILABLE&quot; BASIS. TO THE FULLEST EXTENT PERMISSIBLE PURSUANT TO APPLICABLE LAW, LIBERACE AI DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
           </Text>
           
           <Text fontWeight="bold" mt={3}>5.2 Limitation of Liability</Text>
@@ -92,10 +92,10 @@ export default function TermsPage() {
           
           <Text fontWeight="bold" mt={3}>5.3 No Guarantee of Results</Text>
           <Text>
-            WE DO NOT GUARANTEE THE ACCURACY, COMPLETENESS, OR EFFECTIVENESS OF INTERVIEW COACHING OR ANY AI-GENERATED CONTENT. YOU ARE RESPONSIBLE FOR YOUR OWN DECISIONS AND OUTCOMES BASED ON THE SERVICE'S RECOMMENDATIONS. WE DO NOT GUARANTEE ANY INTERVIEW RESULTS, AND YOU WAIVE YOUR RIGHT TO SUE FOR ANY CONSEQUENCES OF USING THIS SERVICE.
+            WE DO NOT GUARANTEE THE ACCURACY, COMPLETENESS, OR EFFECTIVENESS OF INTERVIEW COACHING OR ANY AI-GENERATED CONTENT. YOU ARE RESPONSIBLE FOR YOUR OWN DECISIONS AND OUTCOMES BASED ON THE SERVICE&apos;S RECOMMENDATIONS. WE DO NOT GUARANTEE ANY INTERVIEW RESULTS, AND YOU WAIVE YOUR RIGHT TO SUE FOR ANY CONSEQUENCES OF USING THIS SERVICE.
           </Text>
           <Text mt={2}>
-            Interview Pilot is a tool to assist users with interview preparation but does not guarantee job offers, interview success, or career advancement. Any decisions based on the service's insights are solely your responsibility.
+            Interview Pilot is a tool to assist users with interview preparation but does not guarantee job offers, interview success, or career advancement. Any decisions based on the service&apos;s insights are solely your responsibility.
           </Text>
           
           <Text fontWeight="bold" mt={3}>5.4 Arbitration Agreement</Text>

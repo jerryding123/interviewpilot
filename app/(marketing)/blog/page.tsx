@@ -2,7 +2,6 @@
 
 import { Box, Container, Heading, Text, VStack, Link } from '@chakra-ui/react'
 import NextLink from 'next/link'
-import { useEffect, useState } from 'react'
 
 interface BlogPost {
   id: string
