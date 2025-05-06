@@ -271,7 +271,11 @@ const HeroSection: React.FC = () => {
         columns={[1, 2, 4]}
         iconSize={4}
         innerWidth="container.xl"
-        pt="20"
+        pt="40"
+        sx={{
+          ".chakra-heading": { fontSize: "2xl" }, // Increase title font size
+          ".chakra-text": { fontSize: "lg" }     // Increase description font size
+        }}
         features={[
           {
             title: '1s Responses',
@@ -284,7 +288,7 @@ const HeroSection: React.FC = () => {
             title: '99% Accuracy',
             icon: FiHeadphones,
             description:
-              'Interview Pilot uses the world&apos;s ranked No. 1 ASR technology for speech recognition.',
+              'Interview Pilot uses the ranked No. 1 ASR technology for speech recognition.',
             iconPosition: 'left',
             delay: 0.8,
           },
@@ -355,9 +359,9 @@ const HighlightsSection = () => {
           </Flex>
         </VStack>
       </HighlightsItem>
-      <HighlightsItem title="Top Speech Recognition">
+      <HighlightsItem title="Voice Recognition">
         <Text color="muted" fontSize="lg">
-          Ranked 1st in speech recognition, Whisper technology is ranked the world&apos;s most accurate AI speech recognition (ASR), capable of detecting almost all languages and accents.
+          Ranked 1st in speech recognition worldwide, Whisper technology is ranked the world&apos;s most accurate AI speech recognition (ASR), capable of detecting almost all languages and accents.
         </Text>
       </HighlightsItem>
       <HighlightsItem title="Full Privacy">
@@ -370,7 +374,7 @@ const HighlightsSection = () => {
         title="Get Ahead of Your Peers"
       >
         <Text color="muted" fontSize="lg">
-          We take care of the trouble of recruiting and interviewing, so you can focus on what really matters: growing your skillsets and career.
+          We take care of the trouble of recruiting and interviewing, so you can focus on what really matters: growing your skillset and career.
         </Text>
         <Wrap mt="8">
           {[
@@ -420,6 +424,10 @@ const FeaturesSection = () => {
           fontSize={['2xl', null, '4xl']}
           textAlign="left"
           as="p"
+          className="main-title"
+          sx={{ 
+            fontSize: {base: '2xl', md: '3xl', lg: '4xl'} 
+          }}
         >
           How to Use
           <Br />3 Simple Steps
@@ -435,58 +443,64 @@ const FeaturesSection = () => {
       align="left"
       columns={[1, 2, 3]}
       iconSize={4}
+      spacing={14}
+      sx={{
+        ".chakra-simple-grid": { 
+          rowGap: "4rem" // Add extra space between rows
+        }
+      }}
       features={[
         {
-          title: 'Step 1',
+          title: <Text fontSize={["xl", "2xl", "3xl"]} fontWeight="bold" mb={3}>Step 1</Text>,
           icon: FiSmile,
           description: (
             <>
               <Br />
-              Upload your resume. Add details about yourself.
+              Upload your resume. Add details about yourself. Copilot will learn to tailor answers to you.
             </>
           ),
           variant: 'inline',
         },
         {
-          title: 'Step 2',
+          title: <Text fontSize={["xl", "2xl", "3xl"]} fontWeight="bold" mb={3}>Step 2</Text>,
           icon: FiBriefcase,
           description: (
             <>
               <Br />
-              Enter the job description, company info and anything else you want Copilot to know.
+              Enter the job description, company info, and anything else you want Copilot to know.
             </>
           ),
           variant: 'inline',
         },
         {
-          title: 'Step 3',
+          title: <Text fontSize={["xl", "2xl", "3xl"]} fontWeight="bold" mb={3}>Step 3</Text>,
           icon: FiBox,
           description: (
             <>
               <Br />
-              Choose a response style, depending on what fits you best.
+              Choose a response style, depending on what fits you best: Key Points, Concise, Standard, Detailed.
             </>
           ),
           variant: 'inline',
         },
         {
-          title: 'Interview',
+          title: <Text fontSize={["xl", "2xl", "3xl"]} fontWeight="bold" mb={3}>Interview</Text>,
           icon: FiMic,
           description: (
             <>
               <Br />
-              Hit Record to detect question. Hit Generate to receive answer.
+              Hit Record to detect question. Hit Generate to get answer. Ace the interview.
             </>
           ),
           variant: 'inline',
         },
         {
-          title: 'Review',
+          title: <Text fontSize={["xl", "2xl", "3xl"]} fontWeight="bold" mb={3}>Review</Text>,
           icon: FiFlag,
           description: (
             <>
               <Br />
-              Save and review all your past interviews to learn.
+              Save and review all your past interviews to learn. Unlimited file history.
             </>
           ),
           variant: 'inline',

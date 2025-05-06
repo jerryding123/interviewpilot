@@ -1,7 +1,7 @@
 import { Button } from '@chakra-ui/react'
 import { Link } from '@saas-ui/react'
 import { NextSeoProps } from 'next-seo'
-import { FaGithub, FaInstagram, FaTiktok, FaTwitter } from 'react-icons/fa'
+import { FaGithub, FaInstagram, FaLinkedin, FaLinkedinIn, FaTiktok, FaTwitter } from 'react-icons/fa'
 import { FiCheck } from 'react-icons/fi'
 import { Logo } from './logo'
 
@@ -11,8 +11,8 @@ const siteConfig = {
     title: 'Interview Pilot',
     description: 'Interview Pilot is an application designed to help job seekers ace technical and behavioral interviews by providing real-time, tailored answers to any interview questions.',
   } as NextSeoProps,
-  termsUrl: '#',
-  privacyUrl: '#',
+  termsUrl: '/terms',
+  privacyUrl: '/privacy',
   header: {
     links: [
       {
@@ -36,6 +36,10 @@ const siteConfig = {
         label: 'Help',
       },
       {
+        href: '/blog',
+        label: 'Blog',
+      },
+      {
         label: 'Download',
         href: 'https://apps.apple.com/us/app/interview-pilot-ai-copilot/id6743263009',
         variant: 'primary',
@@ -53,6 +57,18 @@ const siteConfig = {
       {
         href: 'mailto:liberaceai@gmail.com',
         label: 'Contact',
+      },
+      {
+        href: '/terms',
+        label: 'Terms & Services',
+      },
+      {
+        href: '/privacy',
+        label: 'Privacy Policy',
+      },
+      {
+        href: 'https://linkedin.com/company/interview-pilot',
+        label: <FaLinkedinIn size="18" />,
       },
       {
         href: 'https://x.com/interview_pilot',
