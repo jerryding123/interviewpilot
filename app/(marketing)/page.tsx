@@ -176,8 +176,8 @@ const HeroSection: React.FC = () => {
           boxShadow: '0 0 0 0 rgba(72, 187, 120, 0.7)',
         },
         '70%': {
-          transform: 'translateY(-50%) scale(1)',
-          boxShadow: '0 0 0 10px rgba(72, 187, 120, 0)',
+          transform: 'translateY(-50%) scale(1.2)',
+          boxShadow: '0 0 0 30px rgba(72, 187, 120, 0)',
         },
         '100%': {
           transform: 'translateY(-50%) scale(0.95)',
