@@ -209,7 +209,7 @@ const HeroSection: React.FC = () => {
                 />
                 <Image 
                   src="/static/images/whisperlogo.png" 
-                  width={100} 
+                  width={110} 
                   height={20} 
                   alt="Whisper Logo" 
                 />
