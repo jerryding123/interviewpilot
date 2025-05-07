@@ -252,13 +252,15 @@ const HeroSection: React.FC = () => {
           >
             <FallInPlace delay={1}>
               <Box overflow="hidden" height="100%">
-                <Image
-                  src="/static/screenshots/phone1.png"
+                <video
+                  src="/static/screenshots/phone2.mp4"
                   width={350}
                   height={762}
-                  alt="Interview Pilot App"
-                  quality="100"
-                  priority
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  style={{ objectFit: 'cover' }}
                 />
               </Box>
             </FallInPlace>
