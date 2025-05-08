@@ -149,45 +149,53 @@ const HeroSection: React.FC = () => {
   return (
     <Box position="relative" overflow="hidden">
       <BackgroundGradient height="100%" zIndex="-1" />
-      <Container maxW="container.xl" pt={{ base: 40, lg: 60 }} pb="40">
-        <Stack direction={{ base: 'column', lg: 'row' }} alignItems="center">
+      <Container maxW="container.xl" pt={{ base: 40, lg: 60 }} pb="0">
+        <Stack 
+          direction={{ base: 'column', lg: 'row' }} 
+          alignItems="center"
+          spacing={{ base: 24, sm: 20, md: 16, lg: 0 }}  // Significantly increased spacing for smallest screens
+        >
+          {/* Text content - below video for mobile, left for desktop */}
           <Hero
             id="home"
             justifyContent="flex-start"
             px="0"
+            order={{ base: 2, lg: 1 }}  // Second on mobile, first on desktop
+            mt={{ base: 12, sm: 10, md: 8, lg: 0 }}  // Increased top margin for smaller screens
+            width={{ base: "100%", lg: "50%" }}
             title={
               <FallInPlace>
-<Box as="span" position="relative" display="inline">
-  <Box
-    position="absolute"
-    display="inline-block"
-    right="-40px"  // Changed from left="-40px" to right="-40px"
-    top="50%"
-    transform="translateY(-50%)"
-    w={5}
-    h={5}
-    borderRadius="full"
-    bg="green.400"
-    animation="pulse 2s infinite"
-    sx={{
-      '@keyframes pulse': {
-        '0%': {
-          transform: 'translateY(-50%) scale(0.95)',
-          boxShadow: '0 0 0 0 rgba(72, 187, 120, 0.7)',
-        },
-        '70%': {
-          transform: 'translateY(-50%) scale(1.2)',
-          boxShadow: '0 0 0 30px rgba(72, 187, 120, 0)',
-        },
-        '100%': {
-          transform: 'translateY(-50%) scale(0.95)',
-          boxShadow: '0 0 0 0 rgba(72, 187, 120, 0)',
-        },
-      },
-    }}
-  />
-  Live AI
-</Box>
+                <Box as="span" position="relative" display="inline">
+                  <Box
+                    position="absolute"
+                    display="inline-block"
+                    right="-40px"
+                    top="50%"
+                    transform="translateY(-50%)"
+                    w={5}
+                    h={5}
+                    borderRadius="full"
+                    bg="green.400"
+                    animation="pulse 2s infinite"
+                    sx={{
+                      '@keyframes pulse': {
+                        '0%': {
+                          transform: 'translateY(-50%) scale(0.95)',
+                          boxShadow: '0 0 0 0 rgba(72, 187, 120, 0.7)',
+                        },
+                        '70%': {
+                          transform: 'translateY(-50%) scale(1.2)',
+                          boxShadow: '0 0 0 30px rgba(72, 187, 120, 0)',
+                        },
+                        '100%': {
+                          transform: 'translateY(-50%) scale(0.95)',
+                          boxShadow: '0 0 0 0 rgba(72, 187, 120, 0)',
+                        },
+                      },
+                    }}
+                  />
+                  Live AI
+                </Box>
                 <Br /> Interview Copilot
               </FallInPlace>
             }
@@ -216,9 +224,9 @@ const HeroSection: React.FC = () => {
               </HStack>
 
               <ButtonGroup spacing={4} alignItems="center">
-              <ButtonLink colorScheme="primary" color="black" size="lg" href="https://apps.apple.com/us/app/interview-pilot-ai-copilot/id6743263009" fontWeight="bold">
-  Download
-</ButtonLink>
+                <ButtonLink colorScheme="primary" color="black" size="lg" href="https://apps.apple.com/us/app/interview-pilot-ai-copilot/id6743263009" fontWeight="bold">
+                  Download
+                </ButtonLink>
                 <ButtonLink
                   size="lg"
                   href="#features"
@@ -241,26 +249,38 @@ const HeroSection: React.FC = () => {
               </ButtonGroup>
             </FallInPlace>
           </Hero>
+
+          {/* Video container - above for mobile, right for desktop */}
           <Box
-            height="600px"
-            position="absolute"
-            display={{ base: 'none', lg: 'block' }}
-            left={{ lg: '60%', xl: '55%' }}
-            width="80vw"
-            maxW="1100px"
-            margin="0 auto"
+            width={{ base: "100%", lg: "50%" }}
+            height={{ base: "400px", md: "500px", lg: "600px" }}
+            position={{ base: "relative", lg: "relative" }}  // Changed to relative for all views
+            display="block"
+            order={{ base: 1, lg: 2 }}
+            mb={{ base: 16, sm: 16, md: 12, lg: 0 }}  // Increased bottom margin for mobile views
           >
             <FallInPlace delay={1}>
-              <Box overflow="hidden" height="100%">
+              <Box 
+                overflow="hidden" 
+                height="100%" 
+                display="flex" 
+                justifyContent="center"
+                alignItems="center"
+              >
                 <video
                   src="/static/screenshots/phone2.mp4"
                   width={350}
                   height={762}
+                  style={{ 
+                    width: '100%',
+                    maxWidth: '350px',
+                    height: 'auto',
+                    objectFit: "contain"
+                  }}
                   autoPlay
                   loop
                   muted
                   playsInline
-                  style={{ objectFit: 'cover' }}
                 />
               </Box>
             </FallInPlace>
@@ -275,8 +295,8 @@ const HeroSection: React.FC = () => {
         innerWidth="container.xl"
         pt="40"
         sx={{
-          ".chakra-heading": { fontSize: "2xl" }, // Increase title font size
-          ".chakra-text": { fontSize: "lg" }     // Increase description font size
+          ".chakra-heading": { fontSize: "2xl" },
+          ".chakra-text": { fontSize: "lg" }
         }}
         features={[
           {
