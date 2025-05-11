@@ -9,14 +9,19 @@ export default function TermsPage() {
         Terms of Service
       </Heading>
       <VStack spacing={6} align="stretch">
+
+        <Text fontWeight="bold">
+          Welcome to Interview Pilot! Before you access our services, please read these Terms of Service.
+        </Text>
+
+        <Text>
+          Interview Pilot is a brand owned by Liberace AI (&quot;we,&quot; &quot;us,&quot; &quot;our&quot;). Liberace AI operates the Interview Pilot iOS application and provides related products and services (collectively, the &quot;Services&quot;). These Terms of Service (&quot;Terms&quot;) constitute a legally binding agreement between you (&quot;you,&quot; &quot;your&quot;) and Liberace AI, governing your access to and use of the Services. You agree that by downloading, installing, or accessing the Services, you have read, understood, and agreed to be bound by these Terms. IF YOU DO NOT AGREE WITH ALL OF THESE TERMS, THEN YOU ARE PROHIBITED FROM USING THE SERVICES AND MUST IMMEDIATELY DISCONTINUE USE.
+        </Text>
+        
         <Text fontWeight="bold">
           ARBITRATION NOTICE AND CLASS ACTION WAIVER: EXCEPT FOR CERTAIN TYPES OF DISPUTES DESCRIBED IN THE ARBITRATION SECTION BELOW, YOU AGREE THAT DISPUTES BETWEEN YOU AND US WILL BE RESOLVED BY BINDING, INDIVIDUAL ARBITRATION AND YOU WAIVE YOUR RIGHT TO PARTICIPATE IN A CLASS ACTION LAWSUIT OR CLASS-WIDE ARBITRATION.
         </Text>
-        
-        <Text>
-          Interview Pilot is a brand owned by Liberace AI (&quot;Company,&quot; &quot;we,&quot; &quot;us,&quot; &quot;our&quot;). Liberace AI operates the Interview Pilot iOS application and provides related products and services (collectively, the &quot;Services&quot;). These Terms of Service (&quot;Terms&quot;) constitute a legally binding agreement between you (&quot;you,&quot; &quot;your&quot;) and Liberace AI, governing your access to and use of the Services. You agree that by downloading, installing, or accessing the Services, you have read, understood, and agreed to be bound by these Terms. IF YOU DO NOT AGREE WITH ALL OF THESE TERMS, THEN YOU ARE PROHIBITED FROM USING THE SERVICES AND MUST IMMEDIATELY DISCONTINUE USE.
-        </Text>
-        
+
         <Box>
           <Heading as="h2" size="md" mb={2}>
             1. SERVICE OVERVIEW AND LICENSE TERMS
@@ -118,7 +123,7 @@ export default function TermsPage() {
         </Box>
         
         <Text fontStyle="italic" mt={4} color="gray.600">
-          Last updated: May 6, 2025
+          Last updated: May 12, 2025
         </Text>
       </VStack>
     </Container>
