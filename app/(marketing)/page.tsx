@@ -71,7 +71,7 @@ import testimonials from '#data/testimonials'
 // }
 
 const SystemStatus = () => (
-  <Box 
+  <Box
     position="fixed"
     top="80px"
     left="50%"
@@ -113,9 +113,9 @@ const SystemStatus = () => (
         },
       }}
     />
-    <Text 
-      fontWeight="medium" 
-      color="white" 
+    <Text
+      fontWeight="medium"
+      color="white"
       fontSize="sm"
       lineHeight="1"
       alignSelf="center"
@@ -129,7 +129,7 @@ const Home: NextPage = () => {
   return (
     <Box>
       <SystemStatus />
-      
+
       <HeroSection />
 
       <HighlightsSection />
@@ -149,9 +149,9 @@ const HeroSection: React.FC = () => {
   return (
     <Box position="relative" overflow="hidden">
       <BackgroundGradient height="100%" zIndex="-1" />
-      <Container maxW="container.xl" pt={{ base: 40, lg: 60 }} pb="0">
-        <Stack 
-          direction={{ base: 'column', lg: 'row' }} 
+      <Container maxW="container.xl" pt={{ base: 40, lg: 48 }} pb="0">
+        <Stack
+          direction={{ base: 'column', lg: 'row' }}
           alignItems="center"
           spacing={{ base: 24, sm: 20, md: 16, lg: 0 }}  // Significantly increased spacing for smallest screens
         >
@@ -159,7 +159,7 @@ const HeroSection: React.FC = () => {
           <Hero
             id="home"
             justifyContent="flex-start"
-            px="0"
+            px="20"
             order={{ base: 2, lg: 1 }}  // Second on mobile, first on desktop
             mt={{ base: 12, sm: 10, md: 8, lg: 0 }}  // Increased top margin for smaller screens
             width={{ base: "100%", lg: "50%" }}
@@ -172,8 +172,8 @@ const HeroSection: React.FC = () => {
                     right="-40px"
                     top="50%"
                     transform="translateY(-50%)"
-                    w={5}
-                    h={5}
+                    w={4}
+                    h={4}
                     borderRadius="full"
                     bg="green.400"
                     animation="pulse 2s infinite"
@@ -209,17 +209,17 @@ const HeroSection: React.FC = () => {
           >
             <FallInPlace delay={0.8}>
               <HStack pt="4" pb="12" spacing="8">
-                <Image 
-                  src="/static/images/openailogo.png" 
-                  width={100} 
-                  height={20} 
-                  alt="OpenAI Logo" 
+                <Image
+                  src="/static/images/openailogo.png"
+                  width={100}
+                  height={20}
+                  alt="OpenAI Logo"
                 />
-                <Image 
-                  src="/static/images/whisperlogo.png" 
-                  width={110} 
-                  height={20} 
-                  alt="Whisper Logo" 
+                <Image
+                  src="/static/images/whisperlogo.png"
+                  width={110}
+                  height={20}
+                  alt="Whisper Logo"
                 />
               </HStack>
 
@@ -260,28 +260,34 @@ const HeroSection: React.FC = () => {
             mb={{ base: 16, sm: 16, md: 12, lg: 0 }}  // Increased bottom margin for mobile views
           >
             <FallInPlace delay={1}>
-              <Box 
-                overflow="hidden" 
-                height="100%" 
-                display="flex" 
+              <Box
+                overflow="hidden"
+                height="100%"
+                display="flex"
                 justifyContent="center"
                 alignItems="center"
               >
-                <video
-                  src="/static/screenshots/phone2.mp4"
-                  width={350}
-                  height={762}
-                  style={{ 
-                    width: '100%',
-                    maxWidth: '350px',
-                    height: 'auto',
-                    objectFit: "contain"
-                  }}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                />
+                <Box
+                  borderRadius="50px"  // Adjust this value for more or less rounded corners
+                  overflow="hidden"    // This is critical to apply the border-radius
+                >
+                  <video
+                    src="/static/screenshots/phone2.mp4"
+                    width={300}
+                    height={762}
+                    style={{
+                      width: '100%',
+                      maxWidth: '300px',
+                      height: 'auto',
+                      objectFit: "contain",
+                      display: 'block'  // Removes any extra space below video
+                    }}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                  />
+                </Box>
               </Box>
             </FallInPlace>
           </Box>
@@ -400,24 +406,24 @@ const HighlightsSection = () => {
         </Text>
         <Wrap mt="8">
           {[
-'product management',
-'data science',
-'software engineering',
-'graphic design',
-'copywriting',
-'sales',
-'recruiting',
-'customer success',
-'finance',
-'operations',
-'legal',
-'marketing',
-'public relations',
-'business development',
-'human resources',
-'project management',
-'strategy',
-'analytics',
+            'product management',
+            'data science',
+            'software engineering',
+            'graphic design',
+            'copywriting',
+            'sales',
+            'recruiting',
+            'customer success',
+            'finance',
+            'operations',
+            'legal',
+            'marketing',
+            'public relations',
+            'business development',
+            'human resources',
+            'project management',
+            'strategy',
+            'analytics',
 
           ].map((value) => (
             <Tag
@@ -447,8 +453,8 @@ const FeaturesSection = () => {
           textAlign="left"
           as="p"
           className="main-title"
-          sx={{ 
-            fontSize: {base: '2xl', md: '3xl', lg: '4xl'} 
+          sx={{
+            fontSize: { base: '2xl', md: '3xl', lg: '4xl' }
           }}
         >
           How to Use
@@ -467,7 +473,7 @@ const FeaturesSection = () => {
       iconSize={4}
       spacing={14}
       sx={{
-        ".chakra-simple-grid": { 
+        ".chakra-simple-grid": {
           rowGap: "4rem" // Add extra space between rows
         }
       }}
@@ -554,9 +560,9 @@ const TestimonialsSection = () => {
         {columns.map((column, i) => (
           <Stack key={i} spacing="8">
             {column.map((t, i) => (
-              <Testimonial 
-                key={i} 
-                {...t} 
+              <Testimonial
+                key={i}
+                {...t}
                 height="100%"
                 // These props ensure consistent heights within the grid
                 display="flex"
@@ -575,7 +581,7 @@ const PricingSection = () => {
   return (
     <Pricing {...pricing}>
       <Text p="8" textAlign="center" color="muted">
-        Prices may differ slightly depending on your location.
+        U.S. Dollars. Prices may differ slightly depending on your location.
       </Text>
     </Pricing>
   )

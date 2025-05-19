@@ -7,8 +7,6 @@ const nextConfig = {
   
   // If you're using both app and pages directories
   experimental: {
-    // Enable app directory for App Router features if needed
-    appDir: true,
   },
   
   webpack(config) {

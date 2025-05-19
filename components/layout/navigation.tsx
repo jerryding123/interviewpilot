@@ -1,18 +1,23 @@
-import { HStack } from '@chakra-ui/react'
+import { HStack, Flex, Box, Grid, GridItem } from '@chakra-ui/react'
 import { useDisclosure, useUpdateEffect } from '@chakra-ui/react'
 import { useScrollSpy } from 'hooks/use-scrollspy'
 import { usePathname, useRouter } from 'next/navigation'
-
 import * as React from 'react'
-
 import { MobileNavButton } from '#components/mobile-nav'
 import { MobileNavContent } from '#components/mobile-nav'
 import { NavLink } from '#components/nav-link'
 import siteConfig from '#data/config'
-
 import ThemeToggle from './theme-toggle'
 
-const Navigation: React.FC = () => {
+interface NavigationProps {
+  centerLinks?: boolean;
+  insetButtons?: boolean; // Add this new prop
+}
+
+const Navigation: React.FC<NavigationProps> = ({ 
+  centerLinks = false, 
+  insetButtons = false 
+}) => {
   const mobileNav = useDisclosure()
   const router = useRouter()
   const path = usePathname()
@@ -24,13 +29,86 @@ const Navigation: React.FC = () => {
       threshold: 0.75,
     },
   )
-
+  
   const mobileNavBtnRef = React.useRef<HTMLButtonElement>()
-
+  
   useUpdateEffect(() => {
     mobileNavBtnRef.current?.focus()
   }, [mobileNav.isOpen])
-
+  
+  // Split the navigation - everything except the last item (Download)
+  const navLinks = siteConfig.header.links.slice(0, -1)
+  // Get the Download button (last item)
+  const downloadButton = siteConfig.header.links[siteConfig.header.links.length - 1]
+  
+  if (centerLinks) {
+    return (
+      <Grid templateColumns="1fr auto 1fr" width="100%" gap={4}>
+        {/* Left column - empty to balance with right column */}
+        <GridItem />
+        
+        {/* Center column - navigation links */}
+        <GridItem>
+          <Flex justify="center">
+            {navLinks.map(({ href, id, ...props }, i) => {
+              return (
+                <NavLink
+                  display={['none', null, 'block']}
+                  href={href || `/#${id}`}
+                  key={i}
+                  mx={2}
+                  isActive={
+                    !!(
+                      (id && activeId === id) ||
+                      (href && !!path?.match(new RegExp(href)))
+                    )
+                  }
+                  {...props}
+                >
+                  {props.label}
+                </NavLink>
+              )
+            })}
+          </Flex>
+        </GridItem>
+        
+        {/* Right column - Download button, theme toggle, mobile nav */}
+        <GridItem>
+          <HStack spacing={2} justify="flex-end">
+            <NavLink
+              display={['none', null, 'block']}
+              href={downloadButton.href || `/#${downloadButton.id}`}
+              isActive={
+                !!(
+                  (downloadButton.id && activeId === downloadButton.id) ||
+                  (downloadButton.href && !!path?.match(new RegExp(downloadButton.href)))
+                )
+              }
+              {...downloadButton}
+            >
+              {downloadButton.label}
+            </NavLink>
+            
+            <Box>
+              <ThemeToggle />
+            </Box>
+            
+            <Box>
+              <MobileNavButton
+                ref={mobileNavBtnRef}
+                aria-label="Open Menu"
+                onClick={mobileNav.onOpen}
+              />
+            </Box>
+            
+            <MobileNavContent isOpen={mobileNav.isOpen} onClose={mobileNav.onClose} />
+          </HStack>
+        </GridItem>
+      </Grid>
+    )
+  }
+  
+  // Original layout if centerLinks is false
   return (
     <HStack spacing="2" flexShrink={0}>
       {siteConfig.header.links.map(({ href, id, ...props }, i) => {
@@ -51,15 +129,12 @@ const Navigation: React.FC = () => {
           </NavLink>
         )
       })}
-
       <ThemeToggle />
-
       <MobileNavButton
         ref={mobileNavBtnRef}
         aria-label="Open Menu"
         onClick={mobileNav.onOpen}
       />
-
       <MobileNavContent isOpen={mobileNav.isOpen} onClose={mobileNav.onClose} />
     </HStack>
   )

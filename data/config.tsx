@@ -36,10 +36,6 @@ const siteConfig = {
         label: 'Help',
       },
       {
-        href: '/blog',
-        label: 'Blog',
-      },
-      {
         label: 'Download',
         href: 'https://apps.apple.com/us/app/interview-pilot-ai-copilot/id6743263009',
         variant: 'primary',

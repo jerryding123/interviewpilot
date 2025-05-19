@@ -1,15 +1,15 @@
 import { HStack, Text } from '@chakra-ui/react'
 
 export default {
-  title: 'Pricing',
+  title: 'Simple Pricing',
   description:
     'Simple, transparent pricing for everyone.',
   plans: [
     {
       id: 'free',
       title: 'Free',
-      description: 'Try it and see',
-      price: '$0',
+      description: 'Try full features for free',
+      price: 'Free',
       features: [
         {
           title: '3 Sessions Weekly',
@@ -67,7 +67,7 @@ export default {
       id: 'quarterly',
       title: 'Quarterly',
       description: 'Best Value',
-      price: '$50 / 3 months',
+      price: '$60 / 3 months',
       features: [
         {
           title: '1,000 Copilot Use Weekly',
