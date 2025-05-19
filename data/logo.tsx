@@ -13,8 +13,8 @@ export const Logo: React.FC<HTMLChakraProps<'div'>> = (props) => {
         />
         <Text 
           ml={3} 
-          fontSize="l" 
-          fontWeight="semibold" 
+          fontSize="xl" 
+          fontWeight="bold" 
           color={textColor}
         >
           Interview Pilot
