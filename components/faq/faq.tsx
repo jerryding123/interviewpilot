@@ -24,12 +24,12 @@ export const Faq: React.FC<FaqProps> = (props) => {
     description,
     items = [],
   } = props
-  
+
   return (
     <Section id="faq">
       <SectionTitle title={title} description={description} />
       <Container maxW="container.md" px={{ base: 4, md: 8 }}>
-        <Box 
+        <Box
           bg="rgba(255, 255, 255, 0.05)"
           backdropFilter="blur(10px)"
           borderRadius="xl"
@@ -74,7 +74,9 @@ export const Faq: React.FC<FaqProps> = (props) => {
                   color="muted"
                   borderTop="1px solid rgba(255, 255, 255, 0.06)"
                 >
-                  {item.a}
+                  <Text whiteSpace="pre-line">
+                    {item.a}
+                  </Text>
                 </AccordionPanel>
               </AccordionItem>
             ))}

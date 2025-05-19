@@ -3,13 +3,13 @@ import {
   BoxProps,
   Container,
   Flex,
-  HStack,
   SimpleGrid,
   Stack,
   Text,
+  Wrap,
+  WrapItem,
 } from '@chakra-ui/react'
 import { Link, LinkProps } from '@saas-ui/react'
-
 import siteConfig from '#data/config'
 
 export interface FooterProps extends BoxProps {
@@ -18,10 +18,12 @@ export interface FooterProps extends BoxProps {
 
 export const Footer: React.FC<FooterProps> = (props) => {
   const { columns = 2, ...rest } = props
+  
   return (
-    <Box bg="white" _dark={{ bg: 'gray.900' }} {...rest}>
-      <Container maxW="container.2xl" px="8" py="8">
-        <SimpleGrid columns={columns}>
+    <Box bg="white" _dark={{ bg: 'gray.900' }} width="100%" {...rest}>
+      <Container maxW="container.2xl" px="8" py="8" width="100%">
+        {/* Change columns to be responsive - 1 on mobile, 2 on larger screens */}
+        <SimpleGrid columns={{ base: 1, md: columns }} spacing={{ base: 8, md: 0 }}>
           <Stack spacing="8">
             <Stack alignItems="flex-start">
               <Flex>
@@ -33,13 +35,19 @@ export const Footer: React.FC<FooterProps> = (props) => {
             </Stack>
             <Copyright>{siteConfig.footer.copyright}</Copyright>
           </Stack>
-          <HStack justify="flex-end" spacing="4" alignSelf="flex-end">
-            {siteConfig.footer?.links?.map(({ href, label }) => (
-              <FooterLink key={href} href={href}>
-                {label}
-              </FooterLink>
-            ))}
-          </HStack>
+          
+          {/* Use Wrap for better mobile layout of links */}
+          <Stack spacing="4" alignSelf={{ base: "flex-start", md: "flex-end" }}>
+            <Wrap justify={{ base: "flex-start", md: "flex-end" }} spacing="4">
+              {siteConfig.footer?.links?.map(({ href, label }) => (
+                <WrapItem key={href}>
+                  <FooterLink href={href}>
+                    {label}
+                  </FooterLink>
+                </WrapItem>
+              ))}
+            </Wrap>
+          </Stack>
         </SimpleGrid>
       </Container>
     </Box>

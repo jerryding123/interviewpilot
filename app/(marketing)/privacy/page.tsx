@@ -23,10 +23,7 @@ return (
  Data Security
 </Heading>
 <Text>
- Whenever possible, all data processing occurs on your device. Your interview responses, analysis, and any related data remain local and are not transmitted to our servers unless explicitly required for a feature and agreed to by you.
-</Text>
-<Text mt={2}>
- If a specific feature requires transmitting data, such as cloud-based enhancements or optional backups, we will inform you and request your consent before proceeding. Any such transmission will be encrypted and handled securely.
+ Audio processing occurs entirely on your device. Text processing of your interview questions is handled securely by our AI provider using industry-standard encryption. No data is transmitted to our servers. Any data stored in files remains local to your device or within your iCloud, depending on your storage settings.
 </Text>
 <Text mt={2}>
  We implement industry-standard security measures to protect any data that may be processed through our service. However, as no system is completely secure, we recommend using strong security practices on your devices.
@@ -37,7 +34,7 @@ return (
  Device Permissions
 </Heading>
 <Text>
- Our app may request access to your device&apos;s microphone to enable interview recording functionality. We may also request access to your device storage to save interview recordings and responses locally. These permissions are only used for the core functionality of the app and not for collecting personal data. All audio processing happens on your device.
+ Our app may request access to your device&apos;s microphone to enable interview recording functionality. We may also request access to your device storage to save interview recordings and responses locally. These permissions are only used for the core functionality of the app and not for collecting personal data.
 </Text>
 </Box>
 <Box>
