@@ -41,13 +41,14 @@ export const Header = (props: HeaderProps) => {
       borderBottomWidth={y > height ? '1px' : ''}
       {...props}
     >
-      <Container maxW="container.xl" px={{ base: "8", md: "12" }}>
+      {/* Reduced base padding, increased padding only on large screens */}
+      <Container maxW="container.xl" px={{ base: "4", lg: "12" }}> 
         <Flex width="full" position="relative" py="4">
-          {/* Logo with padding */}
-          <Box 
-            position="absolute" 
-            left={{ base: "8", md: "2" }} // Increased from 0 to move inward
-            top="50%" 
+          {/* Logo positioned flush left on mobile, with inset on desktop */}
+          <Box
+            position="absolute"
+            left={{ base: "0", lg: "8" }}
+            top="50%"
             transform="translateY(-50%)"
           >
             <Logo
@@ -65,7 +66,7 @@ export const Header = (props: HeaderProps) => {
           
           {/* Navigation */}
           <Box width="full">
-            <Navigation centerLinks={true} insetButtons={true} />
+            <Navigation centerLinks={true} insetButtons={true} mobileMode={true} />
           </Box>
         </Flex>
       </Container>

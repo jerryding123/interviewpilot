@@ -11,12 +11,14 @@ import ThemeToggle from './theme-toggle'
 
 interface NavigationProps {
   centerLinks?: boolean;
-  insetButtons?: boolean; // Add this new prop
+  insetButtons?: boolean;
+  mobileMode?: boolean; // Added new prop
 }
 
 const Navigation: React.FC<NavigationProps> = ({ 
   centerLinks = false, 
-  insetButtons = false 
+  insetButtons = false,
+  mobileMode = false 
 }) => {
   const mobileNav = useDisclosure()
   const router = useRouter()
@@ -74,7 +76,12 @@ const Navigation: React.FC<NavigationProps> = ({
         
         {/* Right column - Download button, theme toggle, mobile nav */}
         <GridItem>
-          <HStack spacing={2} justify="flex-end">
+          {/* Apply right padding conditionally based on screen size and mobileMode */}
+          <HStack 
+            spacing={2} 
+            justify="flex-end" 
+            pr={insetButtons ? { base: mobileMode ? 0 : 6, lg: 8 } : 0}
+          >
             <NavLink
               display={['none', null, 'block']}
               href={downloadButton.href || `/#${downloadButton.id}`}

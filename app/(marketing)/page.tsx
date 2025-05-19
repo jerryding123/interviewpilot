@@ -149,64 +149,74 @@ const HeroSection: React.FC = () => {
   return (
     <Box position="relative" overflow="hidden">
       <BackgroundGradient height="100%" zIndex="-1" />
-      <Container maxW="container.xl" pt={{ base: 40, lg: 48 }} pb="0">
+      <Container maxW="container.xl" pt={{ base: 28, lg: 48 }} pb="0">
         <Stack
           direction={{ base: 'column', lg: 'row' }}
           alignItems="center"
-          spacing={{ base: 24, sm: 20, md: 16, lg: 0 }}  // Significantly increased spacing for smallest screens
+          spacing={{ base: 24, sm: 20, md: 16, lg: 0 }}
         >
           {/* Text content - below video for mobile, left for desktop */}
           <Hero
             id="home"
             justifyContent="flex-start"
-            px="20"
-            order={{ base: 2, lg: 1 }}  // Second on mobile, first on desktop
-            mt={{ base: 12, sm: 10, md: 8, lg: 0 }}  // Increased top margin for smaller screens
+            px={{ base: "4", md: "20" }}
+            order={{ base: 2, lg: 1 }}
+            mt={{ base: 12, sm: 10, md: 8, lg: 0 }}
             width={{ base: "100%", lg: "50%" }}
             title={
               <FallInPlace>
-                <Box as="span" position="relative" display="inline">
-                  <Box
-                    position="absolute"
-                    display="inline-block"
-                    right="-40px"
-                    top="50%"
-                    transform="translateY(-50%)"
-                    w={4}
-                    h={4}
-                    borderRadius="full"
-                    bg="green.400"
-                    animation="pulse 2s infinite"
-                    sx={{
-                      '@keyframes pulse': {
-                        '0%': {
-                          transform: 'translateY(-50%) scale(0.95)',
-                          boxShadow: '0 0 0 0 rgba(72, 187, 120, 0.7)',
+                {/* Adjusted font size (smaller) and weight (heavier) */}
+                <Box 
+                  fontSize={{ base: "36px", sm: "42px", md: "48px", lg: "54px" }}
+                  fontWeight="extrabold"  /* Changed from bold to extrabold */
+                  lineHeight="1.1"
+                >
+                  <Box as="span" position="relative" display="inline">
+                    <Box
+                      position="absolute"
+                      display="inline-block"
+                      right="-40px"
+                      top="50%"
+                      transform="translateY(-50%)"
+                      w={4}
+                      h={4}
+                      borderRadius="full"
+                      bg="green.400"
+                      animation="pulse 2s infinite"
+                      sx={{
+                        '@keyframes pulse': {
+                          '0%': {
+                            transform: 'translateY(-50%) scale(0.95)',
+                            boxShadow: '0 0 0 0 rgba(72, 187, 120, 0.7)',
+                          },
+                          '70%': {
+                            transform: 'translateY(-50%) scale(1.2)',
+                            boxShadow: '0 0 0 18px rgba(72, 187, 120, 0)',
+                          },
+                          '100%': {
+                            transform: 'translateY(-50%) scale(0.95)',
+                            boxShadow: '0 0 0 0 rgba(72, 187, 120, 0)',
+                          },
                         },
-                        '70%': {
-                          transform: 'translateY(-50%) scale(1.2)',
-                          boxShadow: '0 0 0 30px rgba(72, 187, 120, 0)',
-                        },
-                        '100%': {
-                          transform: 'translateY(-50%) scale(0.95)',
-                          boxShadow: '0 0 0 0 rgba(72, 187, 120, 0)',
-                        },
-                      },
-                    }}
-                  />
-                  Live AI
+                      }}
+                    />
+                    Live AI
+                  </Box>
+                  <Br /> Interview Copilot
                 </Box>
-                <Br /> Interview Copilot
               </FallInPlace>
             }
             description={
               <FallInPlace delay={0.4} fontWeight="medium">
-                Get instant and tailored <Em>interview answers</Em>
-                <Br /> during your interviews with our AI copilot <Br />{' '}
-                to help you ace your next job interview.
+                <Text fontSize={{ base: "lg", md: "xl" }}>  {/* Slightly reduced */}
+                  Get instant and tailored <Em>interview answers</Em>
+                  <Br /> during your interviews with our AI copilot <Br />{' '}
+                  to help you ace your next job interview.
+                </Text>
               </FallInPlace>
             }
           >
+            {/* Rest of the content remains the same */}
             <FallInPlace delay={0.8}>
               <HStack pt="4" pb="12" spacing="8">
                 <Image
@@ -250,6 +260,7 @@ const HeroSection: React.FC = () => {
             </FallInPlace>
           </Hero>
 
+
           {/* Video container - above for mobile, right for desktop */}
           <Box
             width={{ base: "100%", lg: "50%" }}
@@ -268,16 +279,16 @@ const HeroSection: React.FC = () => {
                 alignItems="center"
               >
                 <Box
-                  borderRadius="50px"  // Adjust this value for more or less rounded corners
+                  borderRadius="48px"  // Adjust this value for more or less rounded corners
                   overflow="hidden"    // This is critical to apply the border-radius
                 >
                   <video
                     src="/static/screenshots/phone2.mp4"
-                    width={300}
+                    width={280}
                     height={762}
                     style={{
                       width: '100%',
-                      maxWidth: '300px',
+                      maxWidth: '280px',
                       height: 'auto',
                       objectFit: "contain",
                       display: 'block'  // Removes any extra space below video
