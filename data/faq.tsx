@@ -14,7 +14,7 @@ const faq = {
     },
     {
       q: 'What devices can I use Interview Pilot on?',
-      a: 'Interview Pilot is designed for iOS devices, supporting most iPhones from 2018 and later and iPads from 2020 and later. For a comprehensive list of devices see below. \n\nInterview Pilot requires iOS 17.0 and above. The best way to check compatibility is to simply run the app and try all functions out for free!\n\n Compatible devices:\n- iPhone XR/XS and later (A12 with Neural Engine)\n- iPad 8th Gen, iPad mini 5, iPad Pro 3rd Gen and later (A12 with Neural Engine)',
+      a: 'Interview Pilot is designed for most iOS devices, supporting most iPhones from 2018 and later and iPads from 2020 and later. For a list of compatible devices see below. \n\nInterview Pilot requires iOS 17.0 and above. The best way to check compatibility is to simply run the app and try all functions out for free!\n\n Compatible devices (newer than below are supported):\n- iPhone XR/XS and later (A12 with Neural Engine)\n- iPad 8th Gen, iPad mini 5, iPad Pro 3rd Gen and later (A12 with Neural Engine)',
     },
     {
       q: 'Is this considered cheating?',

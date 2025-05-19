@@ -73,19 +73,19 @@ import testimonials from '#data/testimonials'
 const SystemStatus = () => {
   const [visible, setVisible] = React.useState(true);
   const [scrollPos, setScrollPos] = React.useState(0);
-  
+
   React.useEffect(() => {
     const handleScroll = () => {
       const currentScrollPos = window.pageYOffset;
-      
+
       // Make banner visible when scrolling up or at the top
       // Hide when scrolling down and not at the top
       const isVisible = (scrollPos > currentScrollPos) || currentScrollPos < 10;
-      
+
       setScrollPos(currentScrollPos);
       setVisible(isVisible);
     };
-    
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, [scrollPos]);
@@ -116,7 +116,7 @@ const SystemStatus = () => {
         h="8px"
         borderRadius="full"
         bg="green.400"
-        animation="statusPulse 2s infinite" 
+        animation="statusPulse 2s infinite"
         alignSelf="center"
         sx={{
           '@keyframes statusPulse': {
@@ -151,11 +151,11 @@ const SystemStatus = () => {
 const AppStoreBanner = () => {
   const [visible, setVisible] = React.useState(true);
   const [scrollPos, setScrollPos] = React.useState(0);
-  
+
   React.useEffect(() => {
     const handleScroll = () => {
       const currentScrollPos = window.pageYOffset;
-      
+
       // Only update visibility if there's a significant change in scroll position
       if (Math.abs(scrollPos - currentScrollPos) > 10) {
         const isVisible = (scrollPos > currentScrollPos) || currentScrollPos < 10;
@@ -163,20 +163,20 @@ const AppStoreBanner = () => {
         setVisible(isVisible);
       }
     };
-    
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, [scrollPos]);
-  
+
   // Custom handler to open the link and keep banner visible
   const handleButtonClick = (e) => {
     e.preventDefault(); // Prevent default navigation
     setVisible(true); // Keep banner visible
-    
+
     // Manually open the App Store link
     window.open("https://apps.apple.com/us/app/interview-pilot-ai-copilot/id6743263009", "_blank");
   };
-  
+
   return (
     <Box
       position="fixed"
@@ -219,9 +219,9 @@ const AppStoreBanner = () => {
           </Text>
         </VStack>
       </Stack>
-      
+
       {/* Use href and onClick without target/rel props */}
-      <ButtonLink 
+      <ButtonLink
         href="https://apps.apple.com/us/app/interview-pilot-ai-copilot/id6743263009"
         colorScheme="primary"
         size="sm"
@@ -251,10 +251,10 @@ const Home: NextPage = () => {
       <PricingSection />
 
       <FaqSection />
-      
+
       {/* Add the AppStoreBanner component here */}
       <AppStoreBanner />
-      
+
       {/* Add padding at the bottom of the page to prevent content from being hidden behind the banner on mobile */}
       <Box pb={{ base: "16", md: "0" }}></Box>
     </Box>
@@ -648,6 +648,8 @@ const FeaturesSection = () => {
             </>
           ),
           variant: 'inline',
+           iconColor: "cyan.400",  // Changed from blue.500 to cyan.500
+  iconBg: "rgba(207, 250, 254, 0.2)"
         },
         {
           title: <Text fontSize={["xl", "2xl", "3xl"]} fontWeight="bold" mb={3}>Review</Text>,
@@ -659,6 +661,8 @@ const FeaturesSection = () => {
             </>
           ),
           variant: 'inline',
+           iconColor: "cyan.400",  // Changed from blue.500 to cyan.500
+  iconBg: "rgba(207, 250, 254, 0.2)"
         },
       ]}
     />

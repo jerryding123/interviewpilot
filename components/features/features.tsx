@@ -13,7 +13,6 @@ import {
   ThemingProps,
   SystemProps,
 } from '@chakra-ui/react'
-
 import { Section, SectionTitle, SectionTitleProps } from 'components/section'
 
 const Revealer = ({ children }: any) => {
@@ -40,6 +39,8 @@ export interface FeatureProps {
   icon?: any
   iconPosition?: 'left' | 'top'
   iconSize?: SystemProps['boxSize']
+  iconColor?: string
+  iconBg?: string  // Added this new property for Circle background
   ip?: 'left' | 'top'
   variant?: string
   delay?: number
@@ -52,19 +53,26 @@ export const Feature: React.FC<FeatureProps> = (props) => {
     icon,
     iconPosition,
     iconSize = 8,
+    iconColor,
+    iconBg,  // Added this new property
     ip,
     variant,
   } = props
+  
   const styles = useMultiStyleConfig('Feature', { variant })
-
   const pos = iconPosition || ip
   const direction = pos === 'left' ? 'row' : 'column'
-
+  
   return (
     <Stack sx={styles.container} direction={direction}>
       {icon && (
-        <Circle sx={styles.icon}>
-          <Icon as={icon} boxSize={iconSize} />
+        <Circle 
+          sx={{
+            ...styles.icon,
+            ...(iconBg && { bg: iconBg })  // Override background if iconBg is provided
+          }}
+        >
+          <Icon as={icon} boxSize={iconSize} color={iconColor} />
         </Circle>
       )}
       <Box>
@@ -88,11 +96,10 @@ export const Features: React.FC<FeaturesProps> = (props) => {
     reveal: Wrap = Revealer,
     ...rest
   } = props
-
+  
   const align = !!aside ? 'left' : alignProp
-
   const ip = align === 'left' ? 'left' : 'top'
-
+  
   return (
     <Section {...rest}>
       <Stack direction="row" height="full" align="flex-start">
