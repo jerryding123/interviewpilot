@@ -149,7 +149,7 @@ const HeroSection: React.FC = () => {
   return (
     <Box position="relative" overflow="hidden">
       <BackgroundGradient height="100%" zIndex="-1" />
-      <Container maxW="container.xl" pt={{ base: 32, lg: 48 }} pb="0">
+      <Container maxW="container.xl" pt={{ base: 36, lg: 48 }} pb="0">
         <Stack
           direction={{ base: 'column', lg: 'row' }}
           alignItems="center"
@@ -166,7 +166,7 @@ const HeroSection: React.FC = () => {
             title={
               <FallInPlace>
                 {/* Adjusted font size (smaller) and weight (heavier) */}
-                <Box 
+                <Box
                   fontSize={{ base: "36px", sm: "42px", md: "48px", lg: "54px" }}
                   fontWeight="extrabold"  /* Changed from bold to extrabold */
                   lineHeight="1.1"
@@ -335,7 +335,7 @@ const HeroSection: React.FC = () => {
             title: '99+ Languages',
             icon: FiGlobe,
             description:
-              'Supports over 99 languages, Copilot automatically generates responses in your language.',
+              'Supports over 99 languages, and any accents. Copilot automatically generates responses in your language.',
             iconPosition: 'left',
             delay: 1,
           },
@@ -417,11 +417,11 @@ const HighlightsSection = () => {
         </Text>
         <Wrap mt="8">
           {[
+            'consulting',
             'product management',
             'data science',
             'software engineering',
             'graphic design',
-            'copywriting',
             'sales',
             'recruiting',
             'customer success',
