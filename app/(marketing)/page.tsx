@@ -70,60 +70,83 @@ import testimonials from '#data/testimonials'
 //  description: 'Free SaaS landingspage starter kit',
 // }
 
-const SystemStatus = () => (
-  <Box
-    position="fixed"
-    top="80px"
-    left="50%"
-    transform="translateX(-50%)"
-    zIndex="1000"
-    px="3"
-    py="2"
-    borderRadius="full"
-    bg="rgba(255, 255, 255, 0.15)"
-    backdropFilter="blur(10px)"
-    border="1px solid rgba(255, 255, 255, 0.2)"
-    boxShadow="0 4px 6px rgba(0, 0, 0, 0.1)"
-    display="flex"
-    alignItems="center"
-    justifyContent="center"
-    gap="2"
-  >
+const SystemStatus = () => {
+  const [visible, setVisible] = React.useState(true);
+  const [scrollPos, setScrollPos] = React.useState(0);
+  
+  React.useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPos = window.pageYOffset;
+      
+      // Make banner visible when scrolling up or at the top
+      // Hide when scrolling down and not at the top
+      const isVisible = (scrollPos > currentScrollPos) || currentScrollPos < 10;
+      
+      setScrollPos(currentScrollPos);
+      setVisible(isVisible);
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [scrollPos]);
+
+  return (
     <Box
-      w="8px"
-      h="8px"
+      position="fixed"
+      top="80px"
+      left="50%"
+      transform={`translateX(-50%) ${visible ? 'translateY(0)' : 'translateY(-150%)'}`}
+      opacity={visible ? 1 : 0}
+      transition="transform 0.3s ease-in-out, opacity 0.3s ease-in-out"
+      zIndex="1000"
+      px="3"
+      py="2"
       borderRadius="full"
-      bg="green.400"
-      animation="statusPulse 2s infinite" // Changed animation name to "statusPulse"
-      alignSelf="center"
-      sx={{
-        '@keyframes statusPulse': { // Changed keyframes name to "statusPulse"
-          '0%': {
-            transform: 'scale(0.95)',
-            boxShadow: '0 0 0 0 rgba(72, 187, 120, 0.7)',
-          },
-          '70%': {
-            transform: 'scale(1)',
-            boxShadow: '0 0 0 10px rgba(72, 187, 120, 0)',
-          },
-          '100%': {
-            transform: 'scale(0.95)',
-            boxShadow: '0 0 0 0 rgba(72, 187, 120, 0)',
-          },
-        },
-      }}
-    />
-    <Text
-      fontWeight="medium"
-      color="white"
-      fontSize="sm"
-      lineHeight="1"
-      alignSelf="center"
+      bg="rgba(255, 255, 255, 0.15)"
+      backdropFilter="blur(10px)"
+      border="1px solid rgba(255, 255, 255, 0.2)"
+      boxShadow="0 4px 6px rgba(0, 0, 0, 0.1)"
+      display="flex"
+      alignItems="center"
+      justifyContent="center"
+      gap="2"
     >
-      All Systems Online
-    </Text>
-  </Box>
-);
+      <Box
+        w="8px"
+        h="8px"
+        borderRadius="full"
+        bg="green.400"
+        animation="statusPulse 2s infinite" 
+        alignSelf="center"
+        sx={{
+          '@keyframes statusPulse': {
+            '0%': {
+              transform: 'scale(0.95)',
+              boxShadow: '0 0 0 0 rgba(72, 187, 120, 0.7)',
+            },
+            '70%': {
+              transform: 'scale(1)',
+              boxShadow: '0 0 0 10px rgba(72, 187, 120, 0)',
+            },
+            '100%': {
+              transform: 'scale(0.95)',
+              boxShadow: '0 0 0 0 rgba(72, 187, 120, 0)',
+            },
+          },
+        }}
+      />
+      <Text
+        fontWeight="medium"
+        color="white"
+        fontSize="sm"
+        lineHeight="1"
+        alignSelf="center"
+      >
+        All Systems Online
+      </Text>
+    </Box>
+  );
+};
 
 // Add this component definition before the Home component
 
@@ -169,8 +192,8 @@ const AppStoreBanner = () => {
       <Stack direction="row" spacing="3" align="center" flex="1">
         <Image
           src="/static/images/interviewpilot.png" // You might want to use your app icon here instead
-          width={38}
-          height={38}
+          width={40}
+          height={40}
           alt="App Icon"
           style={{ borderRadius: '8px' }}
         />
