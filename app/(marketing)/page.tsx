@@ -148,8 +148,6 @@ const SystemStatus = () => {
   );
 };
 
-// Add this component definition before the Home component
-
 const AppStoreBanner = () => {
   const [visible, setVisible] = React.useState(true);
   const [scrollPos, setScrollPos] = React.useState(0);
@@ -158,17 +156,26 @@ const AppStoreBanner = () => {
     const handleScroll = () => {
       const currentScrollPos = window.pageYOffset;
       
-      // Make banner visible when scrolling up or at the top
-      // Hide when scrolling down and not at the top
-      const isVisible = (scrollPos > currentScrollPos) || currentScrollPos < 10;
-      
-      setScrollPos(currentScrollPos);
-      setVisible(isVisible);
+      // Only update visibility if there's a significant change in scroll position
+      if (Math.abs(scrollPos - currentScrollPos) > 10) {
+        const isVisible = (scrollPos > currentScrollPos) || currentScrollPos < 10;
+        setScrollPos(currentScrollPos);
+        setVisible(isVisible);
+      }
     };
     
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, [scrollPos]);
+  
+  // Custom handler to open the link and keep banner visible
+  const handleButtonClick = (e) => {
+    e.preventDefault(); // Prevent default navigation
+    setVisible(true); // Keep banner visible
+    
+    // Manually open the App Store link
+    window.open("https://apps.apple.com/us/app/interview-pilot-ai-copilot/id6743263009", "_blank");
+  };
   
   return (
     <Box
@@ -189,9 +196,10 @@ const AppStoreBanner = () => {
       transform={visible ? 'translateY(0)' : 'translateY(100%)'}
       transition="transform 0.3s ease-in-out"
     >
+      {/* Banner content remains the same */}
       <Stack direction="row" spacing="3" align="center" flex="1">
         <Image
-          src="/static/images/interviewpilot.png" // You might want to use your app icon here instead
+          src="/static/images/interviewpilot.png"
           width={40}
           height={40}
           alt="App Icon"
@@ -211,12 +219,15 @@ const AppStoreBanner = () => {
           </Text>
         </VStack>
       </Stack>
+      
+      {/* Use href and onClick without target/rel props */}
       <ButtonLink 
         href="https://apps.apple.com/us/app/interview-pilot-ai-copilot/id6743263009"
         colorScheme="primary"
         size="sm"
         color="black"
         fontWeight="bold"
+        onClick={handleButtonClick}
       >
         View
       </ButtonLink>
