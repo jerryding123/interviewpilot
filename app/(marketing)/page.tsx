@@ -149,7 +149,7 @@ const HeroSection: React.FC = () => {
   return (
     <Box position="relative" overflow="hidden">
       <BackgroundGradient height="100%" zIndex="-1" />
-      <Container maxW="container.xl" pt={{ base: 28, lg: 48 }} pb="0">
+      <Container maxW="container.xl" pt={{ base: 32, lg: 48 }} pb="0">
         <Stack
           direction={{ base: 'column', lg: 'row' }}
           alignItems="center"
@@ -209,9 +209,9 @@ const HeroSection: React.FC = () => {
             description={
               <FallInPlace delay={0.4} fontWeight="medium">
                 <Text fontSize={{ base: "lg", md: "xl" }}>  {/* Slightly reduced */}
-                  Get instant and tailored <Em>interview answers</Em>
-                  <Br /> during your interviews with our AI copilot <Br />{' '}
-                  to help you ace your next job interview.
+                  Get real-time <Em>interview answers</Em>
+                  <Br /> during your interview with Copilot <Br />{' '}
+                  and ace your next job interview
                 </Text>
               </FallInPlace>
             }
