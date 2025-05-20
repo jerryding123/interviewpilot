@@ -15,7 +15,21 @@ return (
  No Collection of Personal Data
 </Heading>
 <Text>
- We do not collect, store, or process any personal data from our users unless explicitly required for a feature and consented to by you.
+ We do not collect, store, or process any personal data from our users.
+</Text>
+</Box>
+<Box>
+<Heading as="h2" size="md" mb={2}>
+ Analytics
+</Heading>
+<Text>
+ We use Firebase Analytics to collect limited anonymous usage data only during your initial app setup and onboarding process. This helps us improve the user experience and understand how users discover and set up our app. 
+</Text>
+<Text mt={2}>
+ The data collected is limited to basic onboarding interactions and preferences. No personally identifiable information, job details, employment history, or documents are collected. No analytics data is collected during your actual use of the app after completing the onboarding process.
+</Text>
+<Text mt={2}>
+ This anonymous data is transmitted to and stored on Google&apos;s Firebase servers in accordance with Google&apos;s privacy policy. You can learn more about how Google processes this data at https://policies.google.com/privacy.
 </Text>
 </Box>
 <Box>
@@ -23,7 +37,7 @@ return (
  Data Security
 </Heading>
 <Text>
- Audio processing occurs entirely on your device. Text processing of your interview questions is handled securely by our AI provider using industry-standard encryption. No data is transmitted to our servers. Any data stored in files remains local to your device or within your iCloud, depending on your storage settings.
+ Audio processing occurs entirely on your device. Text processing of your interview questions is handled securely by our AI provider using industry-standard encryption. No personal data or content is transmitted to our servers. Any data stored in files remains local to your device or within your iCloud, depending on your storage settings.
 </Text>
 <Text mt={2}>
  We implement industry-standard security measures to protect any data that may be processed through our service. However, as no system is completely secure, we recommend using strong security practices on your devices.
@@ -50,7 +64,7 @@ return (
  Third-Party Services
 </Heading>
 <Text>
- Our app may use third-party services for specific functionality. These services have their own privacy policies, and we encourage you to review them.
+ Our app uses Google Firebase for anonymous analytics during the onboarding process only. We also use third-party services for specific functionality. These services have their own privacy policies, and we encourage you to review them.
 </Text>
 </Box>
 <Box>
@@ -86,7 +100,7 @@ return (
 </Text>
 </Box>
 <Text fontStyle="italic" mt={4} color="gray.600">
- Last updated: May 6, 2025
+ Last updated: May 21, 2025
 </Text>
 </VStack>
 </Container>
