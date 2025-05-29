@@ -59,6 +59,13 @@ const Navigation: React.FC<NavigationProps> = ({
                   href={href || `/#${id}`}
                   key={i}
                   mx={2}
+                  px={3}
+                  borderRadius="md"
+                  transition="all 0.2s ease"
+                  _hover={{
+                    bg: 'rgba(255, 255, 255, 0.1)',
+                    backdropFilter: 'blur(10px)',
+                  }}
                   isActive={
                     !!(
                       (id && activeId === id) ||

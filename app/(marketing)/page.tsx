@@ -401,7 +401,7 @@ const HeroSection: React.FC = () => {
                 >
                   <iframe
                     width="280"
-                    height="762"
+                    height="578"
                     src="https://www.youtube.com/embed/BvSpz885TN4?autoplay=1&loop=1&mute=1&controls=0&modestbranding=1&showinfo=0&rel=0&iv_load_policy=3&playlist=BvSpz885TN4&disablekb=1&fs=0"
                     title="Interview Pilot Demo"
                     frameBorder="0"
