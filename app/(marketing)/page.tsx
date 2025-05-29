@@ -394,25 +394,27 @@ const HeroSection: React.FC = () => {
                 justifyContent="center"
                 alignItems="center"
               >
+
                 <Box
-                  borderRadius="48px"  // Adjust this value for more or less rounded corners
-                  overflow="hidden"    // This is critical to apply the border-radius
+                  borderRadius="48px"
+                  overflow="hidden"
                 >
-                  <video
-                    src="/static/screenshots/phone2.mp4"
-                    width={280}
-                    height={762}
+                  <iframe
+                    width="280"
+                    height="762"
+                    src="https://www.youtube.com/embed/BvSpz885TN4?autoplay=1&loop=1&mute=1&controls=0&modestbranding=1&showinfo=0&rel=0&iv_load_policy=3&playlist=BvSpz885TN4&disablekb=1&fs=0"
+                    title="Interview Pilot Demo"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
                     style={{
                       width: '100%',
                       maxWidth: '280px',
                       height: 'auto',
-                      objectFit: "contain",
-                      display: 'block'  // Removes any extra space below video
+                      aspectRatio: '280/578', // Maintains your video proportions
+                      objectFit: 'contain',
+                      display: 'block'
                     }}
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
                   />
                 </Box>
               </Box>
@@ -648,8 +650,8 @@ const FeaturesSection = () => {
             </>
           ),
           variant: 'inline',
-           iconColor: "cyan.400",  // Changed from blue.500 to cyan.500
-  iconBg: "rgba(207, 250, 254, 0.2)"
+          iconColor: "cyan.400",  // Changed from blue.500 to cyan.500
+          iconBg: "rgba(207, 250, 254, 0.2)"
         },
         {
           title: <Text fontSize={["xl", "2xl", "3xl"]} fontWeight="bold" mb={3}>Review</Text>,
@@ -661,8 +663,8 @@ const FeaturesSection = () => {
             </>
           ),
           variant: 'inline',
-           iconColor: "cyan.400",  // Changed from blue.500 to cyan.500
-  iconBg: "rgba(207, 250, 254, 0.2)"
+          iconColor: "cyan.400",  // Changed from blue.500 to cyan.500
+          iconBg: "rgba(207, 250, 254, 0.2)"
         },
       ]}
     />
