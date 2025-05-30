@@ -51,7 +51,7 @@ const siteConfig = {
     ),
     links: [
       {
-        href: 'mailto:liberaceai@gmail.com',
+        href: 'mailto:Support@LiberaceAI.com',
         label: 'Contact',
       },
       {
