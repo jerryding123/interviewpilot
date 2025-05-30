@@ -29,7 +29,7 @@ export default {
       id: 'weekly',
       title: 'Weekly',
       description: 'Popular',
-      price: '$10 / week',
+      price: '$19.99 / week',
       isRecommended: true,
       features: [
         {
@@ -67,7 +67,7 @@ export default {
       id: 'quarterly',
       title: 'Quarterly',
       description: 'Best Value',
-      price: '$60 / 3 months',
+      price: '$59.99 / 3 months',
       features: [
         {
           title: '1,000 Copilot Use Weekly',
