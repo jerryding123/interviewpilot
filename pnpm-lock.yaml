@@ -29,6 +29,9 @@ dependencies:
   '@svgr/webpack':
     specifier: ^8.1.0
     version: 8.1.0(typescript@5.6.2)
+  '@vercel/analytics':
+    specifier: ^1.5.0
+    version: 1.5.0(next@14.2.14)(react@18.3.1)
   date-fns:
     specifier: ^4.1.0
     version: 4.1.0
@@ -68,10 +71,10 @@ devDependencies:
     specifier: 22.7.4
     version: 22.7.4
   '@types/react':
-    specifier: 18.3.11
+    specifier: ^18.3.11
     version: 18.3.11
   '@types/react-dom':
-    specifier: 18.3.0
+    specifier: ^18.3.0
     version: 18.3.0
   eslint:
     specifier: 8.56.0
@@ -3148,6 +3151,36 @@ packages:
 
   /@ungap/structured-clone@1.2.0:
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
+
+  /@vercel/analytics@1.5.0(next@14.2.14)(react@18.3.1):
+    resolution: {integrity: sha512-MYsBzfPki4gthY5HnYN7jgInhAZ7Ac1cYDoRWFomwGHWEX7odTEzbtg9kf/QSo7XEsEAqlQugA6gJ2WS2DEa3g==}
+    peerDependencies:
+      '@remix-run/react': ^2
+      '@sveltejs/kit': ^1 || ^2
+      next: '>= 13'
+      react: ^18 || ^19 || ^19.0.0-rc
+      svelte: '>= 4'
+      vue: ^3
+      vue-router: ^4
+    peerDependenciesMeta:
+      '@remix-run/react':
+        optional: true
+      '@sveltejs/kit':
+        optional: true
+      next:
+        optional: true
+      react:
+        optional: true
+      svelte:
+        optional: true
+      vue:
+        optional: true
+      vue-router:
+        optional: true
+    dependencies:
+      next: 14.2.14(@babel/core@7.25.7)(react-dom@18.3.1)(react@18.3.1)
+      react: 18.3.1
+    dev: false
 
   /@zag-js/dom-event@0.73.1:
     resolution: {integrity: sha512-qdVThYg6RnLVHTKhoNjZcfnBBQGnPoC9Ey7/gRhu94D/FS3NKIivrPQB5M7JgUkCyL97Yyumpsuhfs4HqldXCw==}
