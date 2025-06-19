@@ -144,7 +144,7 @@ export default async function BlogPage() {
               Coming Soon: Interview Success Stories
             </Heading>
             <Text color="gray.500" _dark={{ color: 'gray.400' }}>
-              We're preparing expert guides on interview preparation, AI tools, and career advancement. Check back soon for insider tips that will transform your interview game!
+              We&apos;re preparing expert guides on interview preparation, AI tools, and career advancement. Check back soon for insider tips that will transform your interview game!
             </Text>
           </VStack>
         ) : (
