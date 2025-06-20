@@ -45,6 +45,7 @@ import {
 } from 'react-icons/fi'
 
 import * as React from 'react'
+import { track } from '@vercel/analytics'
 
 import { ButtonLink } from '#components/button-link/button-link'
 import { Faq } from '#components/faq'
@@ -69,6 +70,20 @@ import testimonials from '#data/testimonials'
 //  title: 'Saas UI Landingspage',
 //  description: 'Free SaaS landingspage starter kit',
 // }
+
+// Add this function to handle Download button clicks
+const handleDownloadClick = (e) => {
+  e.preventDefault(); // Prevent default navigation
+  
+  // Track the App Store click event
+  track('app_store_click', {
+    source: 'hero_download_button',
+    url: 'https://apps.apple.com/us/app/interview-pilot-ai-copilot/id6743263009'
+  });
+  
+  // Open in new tab
+  window.open('https://apps.apple.com/us/app/interview-pilot-ai-copilot/id6743263009', '_blank');
+};
 
 const SystemStatus = () => {
   const [visible, setVisible] = React.useState(true);
@@ -168,10 +183,16 @@ const AppStoreBanner = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [scrollPos]);
 
-  // Custom handler to open the link and keep banner visible
+  // Updated handler to track the click event
   const handleButtonClick = (e) => {
     e.preventDefault(); // Prevent default navigation
     setVisible(true); // Keep banner visible
+
+    // Track the App Store click event
+    track('app_store_click', {
+      source: 'mobile_banner',
+      url: 'https://apps.apple.com/us/app/interview-pilot-ai-copilot/id6743263009'
+    });
 
     // Manually open the App Store link
     window.open("https://apps.apple.com/us/app/interview-pilot-ai-copilot/id6743263009", "_blank");
@@ -220,7 +241,6 @@ const AppStoreBanner = () => {
         </VStack>
       </Stack>
 
-      {/* Use href and onClick without target/rel props */}
       <ButtonLink
         href="https://apps.apple.com/us/app/interview-pilot-ai-copilot/id6743263009"
         colorScheme="primary"
@@ -350,7 +370,14 @@ const HeroSection: React.FC = () => {
               </HStack>
 
               <ButtonGroup spacing={4} alignItems="center">
-                <ButtonLink colorScheme="primary" color="black" size="lg" href="https://apps.apple.com/us/app/interview-pilot-ai-copilot/id6743263009" fontWeight="bold">
+                <ButtonLink 
+                  colorScheme="primary" 
+                  color="black" 
+                  size="lg" 
+                  href="https://apps.apple.com/us/app/interview-pilot-ai-copilot/id6743263009" 
+                  fontWeight="bold"
+                  onClick={handleDownloadClick}
+                >
                   Download
                 </ButtonLink>
                 <ButtonLink
