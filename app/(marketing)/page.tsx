@@ -45,7 +45,6 @@ import {
 } from 'react-icons/fi'
 
 import * as React from 'react'
-import { track } from '@vercel/analytics'
 
 import { ButtonLink } from '#components/button-link/button-link'
 import { Faq } from '#components/faq'
@@ -72,17 +71,9 @@ import testimonials from '#data/testimonials'
 // }
 
 // Add this function to handle Download button clicks
-const handleDownloadClick = (e) => {
-  e.preventDefault(); // Prevent default navigation
-  
-  // Track the App Store click event
-  track('app_store_click', {
-    source: 'hero_download_button',
-    url: 'https://apps.apple.com/us/app/interview-pilot-ai-copilot/id6743263009'
-  });
-  
-  // Open in new tab
-  window.open('https://apps.apple.com/us/app/interview-pilot-ai-copilot/id6743263009', '_blank');
+const handleDownloadClick = () => {
+  // This will show up as a page view in Vercel Analytics
+  window.location.href = '/download/hero';
 };
 
 const SystemStatus = () => {
@@ -183,19 +174,13 @@ const AppStoreBanner = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [scrollPos]);
 
-  // Updated handler to track the click event
+  // Updated handler to use internal redirect route
   const handleButtonClick = (e) => {
     e.preventDefault(); // Prevent default navigation
     setVisible(true); // Keep banner visible
 
-    // Track the App Store click event
-    track('app_store_click', {
-      source: 'mobile_banner',
-      url: 'https://apps.apple.com/us/app/interview-pilot-ai-copilot/id6743263009'
-    });
-
-    // Manually open the App Store link
-    window.open("https://apps.apple.com/us/app/interview-pilot-ai-copilot/id6743263009", "_blank");
+    // This will show up as a page view in Vercel Analytics
+    window.location.href = '/download/mobile';
   };
 
   return (
@@ -242,7 +227,7 @@ const AppStoreBanner = () => {
       </Stack>
 
       <ButtonLink
-        href="https://apps.apple.com/us/app/interview-pilot-ai-copilot/id6743263009"
+        href="/download/mobile"
         colorScheme="primary"
         size="sm"
         color="black"
@@ -374,7 +359,7 @@ const HeroSection: React.FC = () => {
                   colorScheme="primary" 
                   color="black" 
                   size="lg" 
-                  href="https://apps.apple.com/us/app/interview-pilot-ai-copilot/id6743263009" 
+                  href="/download/hero" 
                   fontWeight="bold"
                   onClick={handleDownloadClick}
                 >
