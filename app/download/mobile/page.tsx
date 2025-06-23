@@ -1,12 +1,13 @@
+// /download/mobile page  
 'use client'
 import { useEffect } from 'react'
 
 export default function DownloadMobile() {
   useEffect(() => {
-    // Small delay to allow analytics to track the page view
+    // Add delay to allow Vercel Analytics to track the page view
     const timer = setTimeout(() => {
       window.location.href = 'https://apps.apple.com/us/app/interview-pilot-ai-copilot/id6743263009'
-    }, 200) // 200ms delay
+    }, 600) // 600ms delay
 
     return () => clearTimeout(timer)
   }, [])
