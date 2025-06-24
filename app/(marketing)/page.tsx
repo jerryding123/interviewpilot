@@ -232,10 +232,6 @@ const AppStoreBanner = () => {
         size="sm"
         color="black"
         fontWeight="bold"
-        onClick={(e) => {
-          e.preventDefault();
-          window.location.href = '/download/mobile';
-        }}
       >
         View
       </ButtonLink>
