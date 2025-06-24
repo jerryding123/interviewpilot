@@ -1,3 +1,5 @@
+//app/(marketing)/layout.tsx
+
 import { MarketingLayout } from '#components/layout'
 import { Analytics } from '@vercel/analytics/react'
 
