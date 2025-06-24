@@ -15,6 +15,8 @@ import {
 import Link from 'next/link';
 import { getAllPosts, BlogPostMeta } from '../../../lib/blog';
 
+export const dynamic = 'force-static';
+
 export const metadata = {
   title: 'Interview Preparation Blog | Interview Pilot',
   description: 'Expert interview strategies, AI preparation tips, and career insights. Learn how to ace technical and behavioral interviews with Interview Pilot\'s comprehensive guides.',
