@@ -66,7 +66,6 @@ import { Em } from '#components/typography'
 import faq from '#data/faq'
 import pricing from '#data/pricing'
 import testimonials from '#data/testimonials'
-import { SEO } from '#components/seo/seo'
 
 // export const metadata: Metadata = {
 //  title: 'Saas UI Landingspage',
@@ -243,27 +242,29 @@ const AppStoreBanner = () => {
   );
 };
 
-const Home = () => {
+const Home: NextPage = () => {
   return (
-    <>
-      <SEO 
-        title="AI Interview Copilot | Ace Your Next Job Interview"
-        description="Get real-time AI-powered interview answers during live interviews. 99% accuracy, 1-second responses, 99+ languages. Download Interview Pilot now."
-        canonical="/"
-      />
-      
-      <Box>
-        <SystemStatus />
-        <HeroSection />
-        <HighlightsSection />
-        <FeaturesSection />
-        <TestimonialsSection />
-        <PricingSection />
-        <FaqSection />
-        <AppStoreBanner />
-        <Box pb={{ base: "16", md: "0" }}></Box>
-      </Box>
-    </>
+    <Box>
+      <SystemStatus />
+
+      <HeroSection />
+
+      <HighlightsSection />
+
+      <FeaturesSection />
+
+      <TestimonialsSection />
+
+      <PricingSection />
+
+      <FaqSection />
+
+      {/* Add the AppStoreBanner component here */}
+      <AppStoreBanner />
+
+      {/* Add padding at the bottom of the page to prevent content from being hidden behind the banner on mobile */}
+      <Box pb={{ base: "16", md: "0" }}></Box>
+    </Box>
   )
 }
 
