@@ -232,10 +232,14 @@ const AppStoreBanner = () => {
         size="sm"
         color="black"
         fontWeight="bold"
-        onClick={handleButtonClick}
+        onClick={(e) => {
+          e.preventDefault();
+          window.location.href = '/download/mobile';
+        }}
       >
         View
       </ButtonLink>
+
     </Box>
   );
 };
@@ -355,11 +359,11 @@ const HeroSection: React.FC = () => {
               </HStack>
 
               <ButtonGroup spacing={4} alignItems="center">
-                <ButtonLink 
-                  colorScheme="primary" 
-                  color="black" 
-                  size="lg" 
-                  href="/download/hero" 
+                <ButtonLink
+                  colorScheme="primary"
+                  color="black"
+                  size="lg"
+                  href="/download/hero"
                   fontWeight="bold"
                   onClick={handleDownloadClick}
                 >
