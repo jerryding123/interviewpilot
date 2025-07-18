@@ -235,7 +235,7 @@ const AppStoreBanner = () => {
         color="black"
         fontWeight="bold"
       >
-        Try FREE
+        Try It Now
       </ButtonLink>
 
     </Box>

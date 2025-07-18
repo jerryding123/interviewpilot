@@ -67,7 +67,7 @@ export default {
       id: 'quarterly',
       title: 'Quarterly',
       description: 'Best Value',
-      price: '$49 / 3 months',
+      price: '$59 / 3 months',
       features: [
         {
           title: '1,000 Copilot Use Weekly',
