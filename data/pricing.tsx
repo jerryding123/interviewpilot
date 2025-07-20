@@ -1,9 +1,8 @@
-import { HStack, Text } from '@chakra-ui/react'
+import { HStack, Text, VStack } from '@chakra-ui/react'
 
 export default {
   title: 'Simple Pricing',
-  description:
-    'Simple, transparent pricing for everyone.',
+  description: 'Simple, transparent pricing for everyone.',
   plans: [
     {
       id: 'free',
@@ -29,7 +28,26 @@ export default {
       id: 'weekly',
       title: 'Weekly',
       description: 'Popular',
-      price: '$10 / week',
+      price: (
+        <VStack spacing="1" align="flex-start">
+          <Text 
+            fontSize="lg" 
+            color="gray.500" 
+            textDecoration="line-through"
+            fontWeight="normal"
+          >
+            $10 / week
+          </Text>
+          <HStack spacing="2" align="baseline">
+            <Text fontSize="2xl" fontWeight="bold" color="green.500">
+              $4.99
+            </Text>
+            <Text fontSize="sm" color="muted">
+              / week
+            </Text>
+          </HStack>
+        </VStack>
+      ),
       isRecommended: true,
       features: [
         {
@@ -67,7 +85,26 @@ export default {
       id: 'quarterly',
       title: 'Quarterly',
       description: 'Best Value',
-      price: '$59 / 3 months',
+      price: (
+        <VStack spacing="1" align="flex-start">
+          <Text 
+            fontSize="lg" 
+            color="gray.500" 
+            textDecoration="line-through"
+            fontWeight="normal"
+          >
+            $59 / 3 months
+          </Text>
+          <HStack spacing="2" align="baseline">
+            <Text fontSize="2xl" fontWeight="bold" color="green.500">
+              $49
+            </Text>
+            <Text fontSize="sm" color="muted">
+              / 3 months
+            </Text>
+          </HStack>
+        </VStack>
+      ),
       features: [
         {
           title: '1,000 Copilot Use Weekly',

@@ -1,3 +1,5 @@
+// components/pricing.tsx
+
 import {
   Box,
   HStack,
