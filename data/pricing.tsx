@@ -36,11 +36,11 @@ export default {
             textDecoration="line-through"
             fontWeight="normal"
           >
-            $20 / week
+            $10 / week
           </Text>
           <HStack spacing="2" align="baseline">
             <Text fontSize="2xl" fontWeight="bold" color="green.500">
-              $9.99
+              $4.99
             </Text>
             <Text fontSize="sm" color="muted">
               / week
@@ -93,11 +93,11 @@ export default {
             textDecoration="line-through"
             fontWeight="normal"
           >
-            $120 / 3 months
+            $100 / 3 months
           </Text>
           <HStack spacing="2" align="baseline">
             <Text fontSize="2xl" fontWeight="bold" color="green.500">
-              $59
+              $49
             </Text>
             <Text fontSize="sm" color="muted">
               / 3 months
