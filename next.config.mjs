@@ -6,16 +6,6 @@ const nextConfig = {
   // If you're using both app and pages directories
   experimental: {
   },
-  // Add redirect for weekly subscription URL only
-  async redirects() {
-    return [
-      {
-        source: '/subscription/weekly',
-        destination: '/',
-        permanent: false,
-      },
-    ]
-  },
   // Add headers for apple-app-site-association
   async headers() {
     return [
