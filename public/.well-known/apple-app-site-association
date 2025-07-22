@@ -1,0 +1,18 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["9DZB8X73Z4.Liberace.InterviewAI"],
+        "components": [
+          {
+            "/": "/subscription*",
+            "comment": "Matches all subscription URLs"
+          }
+        ]
+      }
+    ]
+  },
+  "webcredentials": {
+    "apps": ["9DZB8X73Z4.Liberace.InterviewAI"]
+  }
+}
