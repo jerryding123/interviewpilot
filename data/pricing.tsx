@@ -36,14 +36,14 @@ export default {
             textDecoration="line-through"
             fontWeight="normal"
           >
-            $10 / week
+            $25 / month
           </Text>
           <HStack spacing="2" align="baseline">
             <Text fontSize="2xl" fontWeight="bold" color="green.500">
-              $4.99
+              $14.99
             </Text>
             <Text fontSize="sm" color="muted">
-              / week
+              / month
             </Text>
           </HStack>
         </VStack>
@@ -93,11 +93,11 @@ export default {
             textDecoration="line-through"
             fontWeight="normal"
           >
-            $100 / 3 months
+            $80 / 3 months
           </Text>
           <HStack spacing="2" align="baseline">
             <Text fontSize="2xl" fontWeight="bold" color="green.500">
-              $49
+              $39
             </Text>
             <Text fontSize="sm" color="muted">
               / 3 months
