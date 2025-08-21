@@ -36,7 +36,7 @@ export default {
             textDecoration="line-through"
             fontWeight="normal"
           >
-            $25 / month
+            $29 / month
           </Text>
           <HStack spacing="2" align="baseline">
             <Text fontSize="2xl" fontWeight="bold" color="green.500">
