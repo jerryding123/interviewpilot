@@ -60,7 +60,7 @@ const siteConfig = {
       },
       {
         href: '/terms',
-        label: 'Terms & Services',
+        label: 'Terms of Service',
       },
       {
         href: '/privacy',
