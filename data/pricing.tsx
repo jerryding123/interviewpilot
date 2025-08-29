@@ -26,7 +26,7 @@ export default {
     },
     {
       id: 'weekly',
-      title: 'Weekly',
+      title: 'Monthly',
       description: 'Popular',
       price: (
         <VStack spacing="1" align="flex-start">
