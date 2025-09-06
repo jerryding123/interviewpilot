@@ -285,7 +285,7 @@ const HeroSection: React.FC = () => {
             px={{ base: "4", md: "20" }}
             order={{ base: 2, lg: 1 }}
             mt={{ base: 12, sm: 10, md: 8, lg: 0 }}
-            width={{ base: "100%", lg: "50%" }}
+            width={{ base: "100%", lg: "60%" }}
             title={
               <FallInPlace>
                 {/* Adjusted font size (smaller) and weight (heavier) */}
@@ -331,26 +331,25 @@ const HeroSection: React.FC = () => {
             }
             description={
               <FallInPlace delay={0.4} fontWeight="medium">
-                <Text fontSize={{ base: "lg", md: "xl" }}>  {/* Slightly reduced */}
-                  Get real-time <Em>interview answers</Em>
-                  <Br /> during your interview with Copilot <Br />{' '}
-                  and ace your next job interview
+                <Text fontSize={{ base: "xl", md: "2xl" }}>  {/* Slightly reduced */}
+                  Get <Em>real-time</Em> interview answers
+                  <Br /> during your interview with <Em>Copilot</Em><Br />{' '}
                 </Text>
               </FallInPlace>
             }
           >
             {/* Rest of the content remains the same */}
             <FallInPlace delay={0.8}>
-              <HStack pt="4" pb="12" spacing="8">
+              <HStack pt="8" pb="12" spacing="8">
                 <Image
                   src="/static/images/openailogo.png"
-                  width={100}
+                  width={125}
                   height={20}
                   alt="OpenAI Logo"
                 />
                 <Image
                   src="/static/images/whisperlogo.png"
-                  width={110}
+                  width={140}
                   height={20}
                   alt="Whisper Logo"
                 />
@@ -413,19 +412,16 @@ const HeroSection: React.FC = () => {
                   borderRadius="48px"
                   overflow="hidden"
                 >
-                  <iframe
-                    width="280"
-                    height="578"
-                    src="https://www.youtube.com/embed/BvSpz885TN4?autoplay=1&loop=1&mute=1&controls=0&modestbranding=1&showinfo=0&rel=0&iv_load_policy=3&playlist=BvSpz885TN4&disablekb=1&fs=0"
-                    title="Interview Pilot Demo"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
+                  <Image
+                    src="/static/screenshots/phone1.png"
+                    width={280}
+                    height={578}
+                    alt="Interview Pilot App Screenshot"
                     style={{
                       width: '100%',
-                      maxWidth: '280px',
+                      maxWidth: '310px',
                       height: 'auto',
-                      aspectRatio: '280/578', // Maintains your video proportions
+                      aspectRatio: '280/578', // Maintains the same proportions as the video
                       objectFit: 'contain',
                       display: 'block'
                     }}
@@ -439,10 +435,10 @@ const HeroSection: React.FC = () => {
 
       <Features
         id="benefits"
-        columns={[1, 2, 4]}
+        columns={[1, 2, 3]}
         iconSize={4}
-        innerWidth="container.xl"
-        pt="40"
+        innerWidth="container.lg"
+        pt="36"
         sx={{
           ".chakra-heading": { fontSize: "2xl" },
           ".chakra-text": { fontSize: "lg" }
@@ -451,10 +447,11 @@ const HeroSection: React.FC = () => {
           {
             title: '1s Responses',
             icon: FiZap,
-            description: 'Copilot generates responses instantly, ensuring you always have the answer in an interview.',
+            description: 'Copilot generates responses instantly, so you always have the answer',
             iconPosition: 'left',
             delay: 0.6,
           },
+          /*
           {
             title: '99% Accuracy',
             icon: FiHeadphones,
@@ -463,11 +460,12 @@ const HeroSection: React.FC = () => {
             iconPosition: 'left',
             delay: 0.8,
           },
+          */
           {
             title: '99+ Languages',
             icon: FiGlobe,
             description:
-              'Supports over 99 languages, and any accents. Copilot automatically generates responses in your language.',
+              'Supports over 99 languages, and any accents',
             iconPosition: 'left',
             delay: 1,
           },
@@ -475,7 +473,7 @@ const HeroSection: React.FC = () => {
             title: 'Full Privacy',
             icon: FiShield,
             description:
-              'No audio is saved or sent. All audio is processed locally on device, so your information is always safe.',
+              'Your data stays private on your device. We never store or collect your data',
             iconPosition: 'left',
             delay: 1.1,
           },
@@ -532,12 +530,12 @@ const HighlightsSection = () => {
       </HighlightsItem>
       <HighlightsItem title="Voice Recognition">
         <Text color="muted" fontSize="lg">
-          Ranked 1st in speech recognition worldwide, Whisper technology is ranked the world&apos;s most accurate AI speech recognition (ASR), capable of detecting almost all languages and accents.
+          Ranked 1st worldwide, Whisper is the world&apos;s most accurate AI speech recognition (ASR).<br></br><br></br>Interview Pilot is capable of detecting almost all languages and accents.
         </Text>
       </HighlightsItem>
       <HighlightsItem title="Full Privacy">
         <Text color="muted" fontSize="lg">
-          All audio processing happens and stays on-device. No audio is sent to servers. All API calls are anonymous and encrypted to industry standards.
+          Your data stay private on your device. All processing uses indsutry-standard encryption.<br></br><br></br>We never store or collect your app data.
         </Text>
       </HighlightsItem>
       <HighlightsItem
@@ -601,14 +599,11 @@ const FeaturesSection = () => {
           }}
         >
           How to Use
-          <Br />3 Simple Steps
         </Heading>
       }
       description={
         <>
-          Fully Customizable. Completely fuss-free and easy to use.
-          <Br />
-          Fully Undetectable.
+          Fully Undetectable. Completely fuss-free and easy to use.
         </>
       }
       align="left"
@@ -627,7 +622,7 @@ const FeaturesSection = () => {
           description: (
             <>
               <Br />
-              Upload your resume. Add details about yourself. Copilot will learn to tailor answers to you.
+              Upload your resume and personal details.
             </>
           ),
           variant: 'inline',
@@ -638,7 +633,7 @@ const FeaturesSection = () => {
           description: (
             <>
               <Br />
-              Enter the job description, company info, and anything else you want Copilot to know.
+              Enter your job description and anything else important.
             </>
           ),
           variant: 'inline',
@@ -649,7 +644,7 @@ const FeaturesSection = () => {
           description: (
             <>
               <Br />
-              Choose a response style, depending on what fits you best: Key Points, Concise, Standard, Detailed.
+              Choose a response style, depending on what fits you.
             </>
           ),
           variant: 'inline',
@@ -660,7 +655,7 @@ const FeaturesSection = () => {
           description: (
             <>
               <Br />
-              Hit Record to detect question. Hit Generate to get answer. Ace the interview.
+              Record a question. Generate an answer.
             </>
           ),
           variant: 'inline',
@@ -673,7 +668,7 @@ const FeaturesSection = () => {
           description: (
             <>
               <Br />
-              Save and review all your past interviews to learn. Unlimited file history.
+              Save and review all your past interviews to learn.
             </>
           ),
           variant: 'inline',
