@@ -21,7 +21,7 @@ const siteConfig = {
       },
       {
         id: 'features',
-        label: 'How To Use',
+        label: 'How to Use',
       },
       {
         id: 'testimonials',
