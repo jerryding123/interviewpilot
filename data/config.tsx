@@ -50,7 +50,7 @@ const siteConfig = {
     copyright: (
       <>
         Developed by{' '}
-        <Link href="https://www.liberaceai.com">Liberace AI</Link> © 2025 • All Rights Reserved
+        <Link href="https://www.liberaceai.com">Liberace Pte. Ltd.</Link> © 2025 • All Rights Reserved
       </>
     ),
     links: [

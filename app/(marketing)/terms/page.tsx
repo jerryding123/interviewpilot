@@ -15,7 +15,7 @@ export default function TermsPage() {
         </Text>
 
         <Text>
-          Interview Pilot is a brand owned by Liberace AI (&quot;we,&quot; &quot;us,&quot; &quot;our&quot;). Liberace AI operates the Interview Pilot iOS application and provides related products and services (collectively, the &quot;Services&quot;). These Terms of Service (&quot;Terms&quot;) constitute a legally binding agreement between you (&quot;you,&quot; &quot;your&quot;) and Liberace AI, governing your access to and use of the Services. You agree that by downloading, installing, or accessing the Services, you have read, understood, and agreed to be bound by these Terms. IF YOU DO NOT AGREE WITH ALL OF THESE TERMS, THEN YOU ARE PROHIBITED FROM USING THE SERVICES AND MUST IMMEDIATELY DISCONTINUE USE.
+          Interview Pilot is a brand owned by Liberace Pte. Ltd. (&quot;we,&quot; &quot;us,&quot; &quot;our&quot;). Liberace operates the Interview Pilot iOS application and provides related products and services (collectively, the &quot;Services&quot;). These Terms of Service (&quot;Terms&quot;) constitute a legally binding agreement between you (&quot;you,&quot; &quot;your&quot;) and Liberace Pte. Ltd., governing your access to and use of the Services. You agree that by downloading, installing, or accessing the Services, you have read, understood, and agreed to be bound by these Terms. IF YOU DO NOT AGREE WITH ALL OF THESE TERMS, THEN YOU ARE PROHIBITED FROM USING THE SERVICES AND MUST IMMEDIATELY DISCONTINUE USE.
         </Text>
         
         <Text fontWeight="bold">
@@ -29,12 +29,12 @@ export default function TermsPage() {
           
           <Text fontWeight="bold" mt={3}>1.1 Description of Services</Text>
           <Text>
-            Liberace AI provides Interview Pilot, an AI-powered iOS application that assists with job interview preparation and real-time interview support. The app records live interview questions and generates AI responses to help users during interviews. The Services include both free and premium subscription offerings, with the free version providing limited functionality. All audio processing happens on your device, and Interview Pilot does not control your device or make decisions on your behalf.
+            Liberace provides Interview Pilot, an AI-powered iOS application that assists with job interview preparation and real-time interview support. The app records live interview questions and generates AI responses to help users during interviews. The Services include both free and premium subscription offerings, with the free version providing limited functionality. All audio processing happens on your device, and Interview Pilot does not control your device or make decisions on your behalf.
           </Text>
           
           <Text fontWeight="bold" mt={3}>1.2 License Grant</Text>
           <Text>
-            Subject to your compliance with these Terms, Liberace AI grants you a non-exclusive, non-transferable, revocable, limited license to download, install, and use the Services for your personal interview preparation. Your right to use the Services is conditional upon your compliance with these Terms. You shall not modify, distribute, sell, lease, loan, or create derivative works based on the Services or any part thereof. The Services are licensed, not sold, to you.
+            Subject to your compliance with these Terms, Liberace grants you a non-exclusive, non-transferable, revocable, limited license to download, install, and use the Services for your personal interview preparation. Your right to use the Services is conditional upon your compliance with these Terms. You shall not modify, distribute, sell, lease, loan, or create derivative works based on the Services or any part thereof. The Services are licensed, not sold, to you.
           </Text>
         </Box>
         
@@ -76,7 +76,7 @@ export default function TermsPage() {
           </Heading>
           
           <Text>
-            All content generated using our service during your use is owned by you, but the software, branding, algorithms, and infrastructure remain the intellectual property of Liberace AI. We reserve all rights not expressly granted to you in and to the Services. Any breach of our intellectual property rights will constitute a material breach of our Terms and your right to use our Services will terminate immediately.
+            All content generated using our service during your use is owned by you, but the software, branding, algorithms, and infrastructure remain the intellectual property of Liberace Pte. Ltd.. We reserve all rights not expressly granted to you in and to the Services. Any breach of our intellectual property rights will constitute a material breach of our Terms and your right to use our Services will terminate immediately.
           </Text>
         </Box>
         
@@ -87,12 +87,12 @@ export default function TermsPage() {
           
           <Text fontWeight="bold" mt={3}>5.1 Disclaimer of Warranties</Text>
           <Text>
-            THE SERVICES ARE PROVIDED ON AN &quot;AS IS,&quot; &quot;WITH ALL FAULTS,&quot; AND &quot;AS AVAILABLE&quot; BASIS. TO THE FULLEST EXTENT PERMISSIBLE PURSUANT TO APPLICABLE LAW, LIBERACE AI DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
+            THE SERVICES ARE PROVIDED ON AN &quot;AS IS,&quot; &quot;WITH ALL FAULTS,&quot; AND &quot;AS AVAILABLE&quot; BASIS. TO THE FULLEST EXTENT PERMISSIBLE PURSUANT TO APPLICABLE LAW, LIBERACE PTE. LTD. DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
           </Text>
           
           <Text fontWeight="bold" mt={3}>5.2 Limitation of Liability</Text>
           <Text>
-            IN NO EVENT SHALL LIBERACE AI, ITS OWNER, EMPLOYEES, OR AGENTS BE LIABLE TO YOU OR ANY THIRD PARTY FOR ANY DIRECT, INDIRECT, CONSEQUENTIAL, EXEMPLARY, INCIDENTAL, SPECIAL, OR PUNITIVE DAMAGES, INCLUDING LOST PROFIT, LOST REVENUE, LOSS OF DATA, OR OTHER DAMAGES ARISING FROM YOUR USE OF THE SERVICES.
+            IN NO EVENT SHALL LIBERACE PTE. LTD., ITS OWNER, EMPLOYEES, OR AGENTS BE LIABLE TO YOU OR ANY THIRD PARTY FOR ANY DIRECT, INDIRECT, CONSEQUENTIAL, EXEMPLARY, INCIDENTAL, SPECIAL, OR PUNITIVE DAMAGES, INCLUDING LOST PROFIT, LOST REVENUE, LOSS OF DATA, OR OTHER DAMAGES ARISING FROM YOUR USE OF THE SERVICES.
           </Text>
           
           <Text fontWeight="bold" mt={3}>5.3 No Guarantee of Results</Text>
@@ -108,7 +108,7 @@ export default function TermsPage() {
             All claims and disputes arising out of or relating to these Terms or your use of the Services shall be settled by binding arbitration, except for disputes in which either party seeks equitable relief for the alleged unlawful use of copyrights, trademarks, trade names, logos, trade secrets, or patents.
           </Text>
           <Text mt={2}>
-            ALL CLAIMS AND DISPUTES MUST BE ARBITRATED OR LITIGATED ON AN INDIVIDUAL BASIS AND NOT ON A CLASS BASIS. ANY CLAIM OR DISPUTE ARISING OUT OF OR RELATED TO THE TERMS OR THE SERVICES IS PERSONAL TO YOU AND LIBERACE AI AND WILL BE RESOLVED SOLELY THROUGH INDIVIDUAL ARBITRATION AND WILL NOT BE BROUGHT AS A CLASS ARBITRATION, CLASS ACTION, OR ANY OTHER TYPE OF REPRESENTATIVE PROCEEDING.
+            ALL CLAIMS AND DISPUTES MUST BE ARBITRATED OR LITIGATED ON AN INDIVIDUAL BASIS AND NOT ON A CLASS BASIS. ANY CLAIM OR DISPUTE ARISING OUT OF OR RELATED TO THE TERMS OR THE SERVICES IS PERSONAL TO YOU AND LIBERACE PTE. LTD. AND WILL BE RESOLVED SOLELY THROUGH INDIVIDUAL ARBITRATION AND WILL NOT BE BROUGHT AS A CLASS ARBITRATION, CLASS ACTION, OR ANY OTHER TYPE OF REPRESENTATIVE PROCEEDING.
           </Text>
         </Box>
         
