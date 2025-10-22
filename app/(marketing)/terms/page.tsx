@@ -31,6 +31,9 @@ export default function TermsPage() {
           <Text>
             Liberace provides Interview Pilot, an AI-powered iOS application that assists with job interview preparation and real-time interview support. The app records live interview questions and generates AI responses to help users during interviews. The Services include both free and premium subscription offerings, with the free version providing limited functionality. All audio processing happens on your device, and Interview Pilot does not control your device or make decisions on your behalf.
           </Text>
+          <Text mt={2}>
+            Interview Pilot also provides access to Basecamp features, including a database of interview questions, AI feedback, and analytics. Questions featured in the Services may be sourced from publicly available online materials, user submissions, or commonly asked interview questions at certain companies or in specific roles. We do not guarantee that any question displayed has been asked—or will be asked—by a specific company. All content is provided solely for educational and preparation purposes.
+          </Text>
           
           <Text fontWeight="bold" mt={3}>1.2 License Grant</Text>
           <Text>
@@ -68,6 +71,7 @@ export default function TermsPage() {
           <Text ml={5}>• Use the Services in a manner that violates any applicable local, state, national, or international law or regulation</Text>
           <Text ml={5}>• Use the Services to misrepresent your qualifications or abilities in employment scenarios</Text>
           <Text ml={5}>• Use the Services in violation of any employer policies or interview protocols that explicitly forbid external assistance</Text>
+          <Text ml={5}>• Attempt to extract, copy, or scrape our database, algorithms, or proprietary content</Text>
         </Box>
         
         <Box>
@@ -76,7 +80,7 @@ export default function TermsPage() {
           </Heading>
           
           <Text>
-            All content generated using our service during your use is owned by you, but the software, branding, algorithms, and infrastructure remain the intellectual property of Liberace Pte. Ltd.. We reserve all rights not expressly granted to you in and to the Services. Any breach of our intellectual property rights will constitute a material breach of our Terms and your right to use our Services will terminate immediately.
+            All content generated using our service during your use is owned by you, but the software, branding, algorithms, and infrastructure remain the intellectual property of Liberace Pte. Ltd. We reserve all rights not expressly granted to you in and to the Services. However, by using the Services, you grant Liberace a non-exclusive, royalty-free, worldwide license to use aggregated and anonymized data to improve our products and services. Any breach of our intellectual property rights will constitute a material breach of our Terms and your right to use our Services will terminate immediately.
           </Text>
         </Box>
         
@@ -100,7 +104,12 @@ export default function TermsPage() {
             WE DO NOT GUARANTEE THE ACCURACY, COMPLETENESS, OR EFFECTIVENESS OF INTERVIEW COACHING OR ANY AI-GENERATED CONTENT. YOU ARE RESPONSIBLE FOR YOUR OWN DECISIONS AND OUTCOMES BASED ON THE SERVICE&apos;S RECOMMENDATIONS. WE DO NOT GUARANTEE ANY INTERVIEW RESULTS, AND YOU WAIVE YOUR RIGHT TO SUE FOR ANY CONSEQUENCES OF USING THIS SERVICE.
           </Text>
           <Text mt={2}>
-            Interview Pilot is a tool to assist users with interview preparation but does not guarantee job offers, interview success, or career advancement. Any decisions based on the service&apos;s insights are solely your responsibility.
+            Interview Pilot is a tool to assist users with interview preparation but does not guarantee job offers, interview success, or career advancement. Any decisions based on the service&apos;s insights are solely your responsibility. We do not guarantee that any interview question displayed in the app has been asked or will be asked by any specific company.
+          </Text>
+          
+          <Text fontWeight="bold" mt={3}>5.3(a) Data Accuracy Disclaimer</Text>
+          <Text>
+            While we strive to present accurate analytics and activity information, certain counts, statistics, or AI-generated outputs within Interview Pilot and Basecamp features may include estimates, simulated examples, or aggregated anonymized data. These are provided solely for informational and educational purposes and should not be interpreted as verified or real-time user statistics.
           </Text>
           
           <Text fontWeight="bold" mt={3}>5.4 Arbitration Agreement</Text>
@@ -117,7 +126,12 @@ export default function TermsPage() {
             6. MISCELLANEOUS
           </Heading>
           
+          <Text fontWeight="bold" mt={3}>6.1 Demonstration and Sample Data</Text>
           <Text>
+            Some metrics, activity indicators, or example statistics displayed in Interview Pilot or Basecamp features (such as question views, practice counts, or leaderboard activity) may include sample or internally generated data created by our team for demonstration, testing, or product-improvement purposes. These examples are for illustrative and onboarding purposes only and do not necessarily represent actual user behavior. Such internal data will never be used in marketing, investor reporting, or public communications to represent real user engagement.
+          </Text>
+          
+          <Text mt={3}>
             These Terms may be updated periodically. Continued use of the service constitutes acceptance of any changes. If you have any questions about these Terms, please contact us at Support@LiberaceAI.com.
           </Text>
         </Box>
