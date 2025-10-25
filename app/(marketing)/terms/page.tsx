@@ -29,7 +29,7 @@ export default function TermsPage() {
           
           <Text fontWeight="bold" mt={3}>1.1 Description of Services</Text>
           <Text>
-            Liberace provides Interview Pilot, an AI-powered iOS application that assists with job interview preparation and real-time interview support. The app records live interview questions and generates AI responses to help users during interviews. The Services include both free and premium subscription offerings, with the free version providing limited functionality. All audio processing happens on your device, and Interview Pilot does not control your device or make decisions on your behalf.
+            Liberace provides Interview Pilot, an AI-powered iOS application that assists with job interview preparation and real-time interview support. The app records live interview questions and generates AI responses to help users during interviews. The Services include both free and premium subscription offerings, with the free version providing limited functionality. Interview Pilot does not control your device or make decisions on your behalf.
           </Text>
           <Text mt={2}>
             Interview Pilot also provides access to Basecamp features, including a database of interview questions, AI feedback, and analytics. Questions featured in the Services may be sourced from publicly available online materials, user submissions, or commonly asked interview questions at certain companies or in specific roles. We do not guarantee that any question displayed has been asked—or will be asked—by a specific company. All content is provided solely for educational and preparation purposes.

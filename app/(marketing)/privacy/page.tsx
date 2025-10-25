@@ -37,7 +37,7 @@ return (
  Data Security
 </Heading>
 <Text>
- Audio processing occurs entirely on your device. Text processing of your interview questions is handled securely by our AI provider using industry-standard encryption. No personal data or content is transmitted to our servers. Any data stored in files remains local to your device or within your iCloud, depending on your storage settings.
+ Processing of your interview questions is handled securely by our AI provider using industry-standard encryption. No personal data or content is stored in our servers. Any data stored in files remains local to your device or within your iCloud, depending on your storage settings.
 </Text>
 <Text mt={2}>
  We implement industry-standard security measures to protect any data that may be processed through our service. However, as no system is completely secure, we recommend using strong security practices on your devices.

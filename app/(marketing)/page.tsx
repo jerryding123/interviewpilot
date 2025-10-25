@@ -473,7 +473,7 @@ const HeroSection: React.FC = () => {
             title: 'Full Privacy',
             icon: FiShield,
             description:
-              'Your data stays private on your device. We never store or collect your data',
+              'All data uses industry-standard encryption. We never store your usage data',
             iconPosition: 'left',
             delay: 1.1,
           },
@@ -535,7 +535,7 @@ const HighlightsSection = () => {
       </HighlightsItem>
       <HighlightsItem title="Full Privacy">
         <Text color="muted" fontSize="lg">
-          Your data stay private on your device. All processing uses indsutry-standard encryption.<br></br><br></br>We never store or collect your app data.
+          Your data is secure and owned by you. All data processing uses indsutry-standard encryption.<br></br><br></br>We never store your app usage data.
         </Text>
       </HighlightsItem>
       <HighlightsItem

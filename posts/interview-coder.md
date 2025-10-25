@@ -96,7 +96,6 @@ Every senior software engineer hates LeetCode as it is a completely different sk
 
 | Privacy Factor | Interview Pilot | Interview Coder |
 |----------------|----------------|-----------------|
-| **Audio processing** | 100% on-device | Cloud-based |
 | **Data storage** | Local only | Server-dependent |
 | **Conversation logs** | Not recorded | Potentially stored |
 | **Anonymous usage** | Fully anonymous | Account-linked |
