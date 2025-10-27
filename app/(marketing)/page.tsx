@@ -51,7 +51,8 @@ import * as React from 'react'
 import { ButtonLink } from '#components/button-link/button-link'
 import { Faq } from '#components/faq'
 import { Features } from '#components/features'
-import { BackgroundGradient } from '#components/gradients/background-gradient'
+import Background from '#components/background/background'
+import { InteractiveGridOverlay } from '#components/background/interactive-grid-overlay'
 import { Hero } from '#components/hero'
 import {
   Highlights,
@@ -245,6 +246,9 @@ const AppStoreBanner = () => {
 const Home: NextPage = () => {
   return (
     <Box>
+      <Background />
+      <InteractiveGridOverlay />
+      
       <SystemStatus />
 
       <HeroSection />
@@ -270,8 +274,7 @@ const Home: NextPage = () => {
 
 const HeroSection: React.FC = () => {
   return (
-    <Box position="relative" overflow="hidden">
-      <BackgroundGradient height="100%" zIndex="-1" />
+    <Box overflow="hidden">
       <Container maxW="container.xl" pt={{ base: 36, lg: 48 }} pb="0">
         <Stack
           direction={{ base: 'column', lg: 'row' }}
@@ -290,9 +293,11 @@ const HeroSection: React.FC = () => {
               <FallInPlace>
                 {/* Adjusted font size (smaller) and weight (heavier) */}
                 <Box
-                  fontSize={{ base: "36px", sm: "42px", md: "48px", lg: "54px" }}
+                  fontSize={{ base: "36px", sm: "42px", md: "48px", lg: "60px" }}
                   fontWeight="extrabold"  /* Changed from bold to extrabold */
                   lineHeight="1.1"
+                  position="relative"
+                  zIndex={1}
                 >
                   <Box as="span" position="relative" display="inline">
                     <Box
@@ -331,7 +336,7 @@ const HeroSection: React.FC = () => {
             }
             description={
               <FallInPlace delay={0.4} fontWeight="medium">
-                <Text fontSize={{ base: "xl", md: "2xl" }}>  {/* Slightly reduced */}
+                <Text fontSize={{ base: "2xl", md: "3xl" }} position="relative" zIndex={1}>  {/* Slightly reduced */}
                   Get <Em>real-time</Em> interview answers
                   <Br /> during your interview with <Em>Copilot</Em><Br />{' '}
                 </Text>
@@ -340,22 +345,22 @@ const HeroSection: React.FC = () => {
           >
             {/* Rest of the content remains the same */}
             <FallInPlace delay={0.8}>
-              <HStack pt="8" pb="12" spacing="8">
+              <HStack pt="8" pb="12" spacing="8" position="relative" zIndex={1}>
                 <Image
                   src="/static/images/openailogo.png"
-                  width={125}
+                  width={145}
                   height={20}
                   alt="OpenAI Logo"
                 />
                 <Image
                   src="/static/images/whisperlogo.png"
-                  width={140}
+                  width={160}
                   height={20}
                   alt="Whisper Logo"
                 />
               </HStack>
 
-              <ButtonGroup spacing={4} alignItems="center">
+              <ButtonGroup spacing={4} alignItems="center" position="relative" zIndex={1}>
                 <ButtonLink
                   colorScheme="primary"
                   color="black"
@@ -397,7 +402,7 @@ const HeroSection: React.FC = () => {
             position={{ base: "relative", lg: "relative" }}  // Changed to relative for all views
             display="block"
             order={{ base: 1, lg: 2 }}
-            mb={{ base: 16, sm: 16, md: 12, lg: 0 }}  // Increased bottom margin for mobile views
+            mb={{ base: 40, sm: 40, md: 40, lg: 0 }}  // Increased bottom margin for mobile views
           >
             <FallInPlace delay={1}>
               <Box
@@ -406,6 +411,8 @@ const HeroSection: React.FC = () => {
                 display="flex"
                 justifyContent="center"
                 alignItems="center"
+                position="relative"
+                zIndex={1}
               >
 
                 <Box
@@ -413,15 +420,14 @@ const HeroSection: React.FC = () => {
                   overflow="hidden"
                 >
                   <Image
-                    src="/static/screenshots/phone1.png"
-                    width={280}
+                    src="/static/screenshots/hand1.png"
+                    width={580}
                     height={578}
                     alt="Interview Pilot App Screenshot"
                     style={{
                       width: '100%',
-                      maxWidth: '310px',
+                      maxWidth: '610px',
                       height: 'auto',
-                      aspectRatio: '280/578', // Maintains the same proportions as the video
                       objectFit: 'contain',
                       display: 'block'
                     }}
@@ -441,7 +447,11 @@ const HeroSection: React.FC = () => {
         pt="36"
         sx={{
           ".chakra-heading": { fontSize: "2xl" },
-          ".chakra-text": { fontSize: "lg" }
+          ".chakra-text": { fontSize: "lg" },
+          "& h1, & h2, & h3, & h4, & h5, & h6, & .chakra-heading, & .chakra-text, & > div, & > div > div, .feature-item, .saas-feature, & svg, & .chakra-icon, & [role='img']": {
+            position: "relative",
+            zIndex: 1
+          }
         }}
         features={[
           {
@@ -488,9 +498,17 @@ const HighlightsSection = () => {
   const { value, onCopy, hasCopied } = useClipboard('#interviewpilot')
 
   return (
-    <Highlights>
+    <Box
+      sx={{
+        "& h1, & h2, & h3, & h4, & h5, & h6, & .chakra-heading, & .chakra-text, & p, & span, & svg, & .chakra-icon": {
+          position: "relative",
+          zIndex: 1
+        }
+      }}
+    >
+      <Highlights>
       <HighlightsItem colSpan={[1, null, 2]} title="Accurate. Instant. Tailored.">
-        <VStack alignItems="flex-start" spacing="8">
+        <VStack alignItems="flex-start" spacing="8" position="relative" zIndex={1}>
           <Text color="muted" fontSize="xl">
             Ace any technical or behavioral questions with <Em>our most intelligent Copilot model</Em>.
             Upload your resume, job details and more for <Em>full Copilot customization</Em>.
@@ -529,12 +547,12 @@ const HighlightsSection = () => {
         </VStack>
       </HighlightsItem>
       <HighlightsItem title="Voice Recognition">
-        <Text color="muted" fontSize="lg">
+        <Text color="muted" fontSize="lg" position="relative" zIndex={1}>
           Ranked 1st worldwide, Whisper is the world&apos;s most accurate AI speech recognition (ASR).<br></br><br></br>Interview Pilot is capable of detecting almost all languages and accents.
         </Text>
       </HighlightsItem>
       <HighlightsItem title="Full Privacy">
-        <Text color="muted" fontSize="lg">
+        <Text color="muted" fontSize="lg" position="relative" zIndex={1}>
           Your data is secure and owned by you. All data processing uses indsutry-standard encryption.<br></br><br></br>We never store your app usage data.
         </Text>
       </HighlightsItem>
@@ -542,10 +560,10 @@ const HighlightsSection = () => {
         colSpan={[1, null, 2]}
         title="Get Ahead of Your Peers"
       >
-        <Text color="muted" fontSize="lg">
+        <Text color="muted" fontSize="lg" position="relative" zIndex={1}>
           We take care of the trouble of recruiting and interviewing, so you can focus on what really matters: growing your skillset and career.
         </Text>
-        <Wrap mt="8">
+        <Wrap mt="8" position="relative" zIndex={1}>
           {[
             'consulting',
             'product management',
@@ -580,14 +598,23 @@ const HighlightsSection = () => {
         </Wrap>
       </HighlightsItem>
     </Highlights>
+    </Box>
   )
 }
 
 const FeaturesSection = () => {
   return (
-    <Features
-      id="features"
-      title={
+    <Box
+      sx={{
+        "& h1, & h2, & h3, & h4, & h5, & h6, & .chakra-heading, & .chakra-text, & p, & svg, & .chakra-icon": {
+          position: "relative",
+          zIndex: 1
+        }
+      }}
+    >
+      <Features
+        id="features"
+        title={
         <Heading
           lineHeight="short"
           fontSize={['2xl', null, '4xl']}
@@ -613,6 +640,10 @@ const FeaturesSection = () => {
       sx={{
         ".chakra-simple-grid": {
           rowGap: "4rem" // Add extra space between rows
+        },
+        ".feature-item, .saas-feature, & > div, & svg, & .chakra-icon, & [role='img']": {
+          position: "relative",
+          zIndex: 1
         }
       }}
       features={[
@@ -677,6 +708,7 @@ const FeaturesSection = () => {
         },
       ]}
     />
+    </Box>
   )
 }
 
@@ -692,15 +724,23 @@ const TestimonialsSection = () => {
   }, [])
 
   return (
-    <Testimonials
-      id="testimonials"
-      title={testimonials.title}
-      columns={[1, 2, 3]}
-      innerWidth="container.xl"
+    <Box
+      sx={{
+        "& h1, & h2, & h3, & h4, & h5, & h6, & .chakra-heading, & .chakra-text, & p, & svg, & .chakra-icon": {
+          position: "relative",
+          zIndex: 1
+        }
+      }}
     >
+      <Testimonials
+        id="testimonials"
+        title={testimonials.title}
+        columns={[1, 2, 3]}
+        innerWidth="container.xl"
+      >
       <>
         {columns.map((column, i) => (
-          <Stack key={i} spacing="8">
+          <Stack key={i} spacing="8" position="relative" zIndex={1}>
             {column.map((t, i) => (
               <Testimonial
                 key={i}
@@ -716,21 +756,42 @@ const TestimonialsSection = () => {
         ))}
       </>
     </Testimonials>
+    </Box>
   )
 }
 
 const PricingSection = () => {
   return (
-    <Pricing {...pricing}>
-      <Text p="8" textAlign="center" color="muted">
-        U.S. Dollars. Prices may differ slightly depending on your location.
-      </Text>
-    </Pricing>
+    <Box
+      sx={{
+        "& h1, & h2, & h3, & h4, & h5, & h6, & .chakra-heading, & .chakra-text, & p, & svg, & .chakra-icon": {
+          position: "relative",
+          zIndex: 1
+        }
+      }}
+    >
+      <Pricing {...pricing}>
+        <Text p="8" textAlign="center" color="muted" position="relative" zIndex={1}>
+          U.S. Dollars. Prices may differ slightly depending on your location.
+        </Text>
+      </Pricing>
+    </Box>
   )
 }
 
 const FaqSection = () => {
-  return <Faq {...faq} />
+  return (
+    <Box
+      sx={{
+        "& h1, & h2, & h3, & h4, & h5, & h6, & .chakra-heading, & .chakra-text, & p, & svg, & .chakra-icon": {
+          position: "relative",
+          zIndex: 1
+        }
+      }}
+    >
+      <Faq {...faq} />
+    </Box>
+  )
 }
 
 export default Home

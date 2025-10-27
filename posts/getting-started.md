@@ -101,7 +101,6 @@ While tools like Interview Coder only handle LeetCode problems, Interview Pilot 
 - **Industry-specific questions** (fintech, healthcare, AI/ML)
 
 ### Privacy-First Design 🔒
-- **All audio processing on-device** - nothing sent to servers
 - **No conversation recording** - complete privacy
 - **Anonymous API calls** - encrypted to industry standards
 - **Your data stays yours** - no sharing or selling

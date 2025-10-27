@@ -20,7 +20,8 @@ export const Footer: React.FC<FooterProps> = (props) => {
   const { columns = 2, ...rest } = props
   
   return (
-    <Box bg="white" _dark={{ bg: 'gray.900' }} width="100%" {...rest}>
+    <Box bg="white" _dark={{ bg: 'gray.900' }} width="100%" position="relative" 
+      zIndex={1} {...rest}>
       <Container maxW="container.2xl" px="8" py="8" width="100%">
         {/* Change columns to be responsive - 1 on mobile, 2 on larger screens */}
         <SimpleGrid columns={{ base: 1, md: columns }} spacing={{ base: 8, md: 0 }}>
