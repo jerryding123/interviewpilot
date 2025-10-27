@@ -73,7 +73,8 @@ export const Pricing: React.FC<PricingProps> = (props) => {
               </PricingFeatures>
               <ButtonLink 
                 colorScheme="primary" 
-                color="black" // Added black text color
+                color="black"
+                borderRadius="full"
                 {...plan.action}
               >
                 {plan.action.label || 'Continue'}
