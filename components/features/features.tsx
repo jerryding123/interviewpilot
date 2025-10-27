@@ -40,7 +40,7 @@ export interface FeatureProps {
   iconPosition?: 'left' | 'top'
   iconSize?: SystemProps['boxSize']
   iconColor?: string
-  iconBg?: string  // Added this new property for Circle background
+  iconBg?: string // Added this new property for Circle background
   ip?: 'left' | 'top'
   variant?: string
   delay?: number
@@ -54,22 +54,20 @@ export const Feature: React.FC<FeatureProps> = (props) => {
     iconPosition,
     iconSize = 8,
     iconColor,
-    iconBg,  // Added this new property
+    iconBg, // Added this new property
     ip,
     variant,
   } = props
-  
   const styles = useMultiStyleConfig('Feature', { variant })
   const pos = iconPosition || ip
   const direction = pos === 'left' ? 'row' : 'column'
-  
   return (
-    <Stack sx={styles.container} direction={direction}>
+    <Stack sx={styles.container} direction={direction} position="relative" zIndex={1}>
       {icon && (
-        <Circle 
+        <Circle
           sx={{
             ...styles.icon,
-            ...(iconBg && { bg: iconBg })  // Override background if iconBg is provided
+            ...(iconBg && { bg: iconBg }) // Override background if iconBg is provided
           }}
         >
           <Icon as={icon} boxSize={iconSize} color={iconColor} />
@@ -96,10 +94,8 @@ export const Features: React.FC<FeaturesProps> = (props) => {
     reveal: Wrap = Revealer,
     ...rest
   } = props
-  
   const align = !!aside ? 'left' : alignProp
   const ip = align === 'left' ? 'left' : 'top'
-  
   return (
     <Section {...rest}>
       <Stack direction="row" height="full" align="flex-start">

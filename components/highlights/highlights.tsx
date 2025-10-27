@@ -9,7 +9,6 @@ import {
   useTheme,
 } from '@chakra-ui/react'
 import { transparentize } from '@chakra-ui/theme-tools'
-
 import { Section, SectionProps } from '#components/section'
 import { Testimonial, TestimonialProps } from '#components/testimonials'
 
@@ -22,15 +21,27 @@ export const HighlightsItem: React.FC<HighlightBoxProps> = (props) => {
   return (
     <GridItem
       as={Card}
-      borderRadius="md"
+      borderRadius="xl"
       p="8"
       flex="1 0"
       alignItems="flex-start"
       spacing="8"
       overflow="hidden"
-      position="relative"
-      bg="white"
-      _dark={{ bg: 'gray.800' }}
+      bg="rgba(255, 255, 255, 0.05)"
+      backdropFilter="blur(10px)"
+      borderWidth="1px"
+      borderColor="rgba(255, 255, 255, 0.1)"
+      boxShadow="0 4px 20px rgba(0, 0, 0, 0.1)"
+      _hover={{
+        bg: "rgba(255, 255, 255, 0.08)",
+        transform: "translateY(-2px)",
+        boxShadow: "0 6px 24px rgba(0, 0, 0, 0.15)"
+      }}
+      transition="all 0.3s ease"
+      _dark={{ 
+        bg: 'rgba(255, 255, 255, 0.05)',
+        borderColor: 'rgba(255, 255, 255, 0.1)',
+      }}
       {...rest}
     >
       {title && (
@@ -43,7 +54,7 @@ export const HighlightsItem: React.FC<HighlightBoxProps> = (props) => {
   )
 }
 
-export const HighlightsTestimonialItem: React.FC<
+export const HighlightsTestimonialItem: React.FC <
   HighlightBoxProps & TestimonialProps & { gradient: [string, string] }
 > = (props) => {
   const {
@@ -86,7 +97,6 @@ export const HighlightsTestimonialItem: React.FC<
         bg="transparent"
         boxShadow="none"
         color="white"
-        position="relative"
       >
         {children}
       </Testimonial>
@@ -96,18 +106,15 @@ export const HighlightsTestimonialItem: React.FC<
 
 export const Highlights: React.FC<SectionProps> = (props) => {
   const { children, ...rest } = props
-
   return (
     <Section
       innerWidth="container.xl"
-      position="relative"
       overflow="hidden"
       {...rest}
     >
       <Grid
         templateColumns={{ base: 'repeat(1, 1fr)', lg: 'repeat(3, 1fr)' }}
         gap={8}
-        position="relative"
       >
         {children}
       </Grid>

@@ -40,7 +40,7 @@ export function InteractiveGridOverlay() {
               height={height}
               stroke="rgba(255, 255, 255, 0.10)"
               strokeWidth="1"
-              fill={hoveredSquare === index ? "rgba(255, 255, 255, 0.08)" : "transparent"}
+              fill={hoveredSquare === index ? "rgba(255, 255, 255, 0.15)" : "transparent"}
               style={{
                 transition: hoveredSquare === index
                   ? "fill 100ms ease-in-out"

@@ -208,7 +208,7 @@ const AppStoreBanner = () => {
       {/* Banner content remains the same */}
       <Stack direction="row" spacing="3" align="center" flex="1">
         <Image
-          src="/static/images/interviewpilot.png"
+          src="/static/images/interviewpilot_newlogo.png"
           width={40}
           height={40}
           alt="App Icon"
@@ -248,7 +248,7 @@ const Home: NextPage = () => {
     <Box>
       <Background />
       <InteractiveGridOverlay />
-      
+
       <SystemStatus />
 
       <HeroSection />
@@ -348,13 +348,13 @@ const HeroSection: React.FC = () => {
               <HStack pt="8" pb="12" spacing="8" position="relative" zIndex={1}>
                 <Image
                   src="/static/images/openailogo.png"
-                  width={135}
+                  width={125}
                   height={20}
                   alt="OpenAI Logo"
                 />
                 <Image
                   src="/static/images/whisperlogo.png"
-                  width={150}
+                  width={140}
                   height={20}
                   alt="Whisper Logo"
                 />
@@ -368,6 +368,7 @@ const HeroSection: React.FC = () => {
                   href="/download/hero"
                   fontWeight="bold"
                   onClick={handleDownloadClick}
+                  borderRadius="full"
                 >
                   Download
                 </ButtonLink>
@@ -375,6 +376,7 @@ const HeroSection: React.FC = () => {
                   size="lg"
                   href="#features"
                   variant="outline"
+                  borderRadius="full"
                   rightIcon={
                     <Icon
                       as={FiArrowRight}
@@ -502,102 +504,112 @@ const HighlightsSection = () => {
       sx={{
         "& h1, & h2, & h3, & h4, & h5, & h6, & .chakra-heading, & .chakra-text, & p, & span, & svg, & .chakra-icon": {
           position: "relative",
-          zIndex: 1
+          zIndex: 1,
         }
       }}
     >
       <Highlights>
-      <HighlightsItem colSpan={[1, null, 2]} title="Accurate. Instant. Tailored.">
-        <VStack alignItems="flex-start" spacing="8" position="relative" zIndex={1}>
-          <Text color="muted" fontSize="xl">
-            Ace any technical or behavioral questions with <Em>our most intelligent Copilot model</Em>.
-            Upload your resume, job details and more for <Em>full Copilot customization</Em>.
-            Choose your desired Copilot answer style, and review all your past interviews in one place.
-          </Text>
+        <HighlightsItem colSpan={[1, null, 2]} title="Accurate. Instant. Tailored.">
+          <VStack alignItems="flex-start" spacing="8" position="relative" zIndex={1}>
+            <Text color="muted" fontSize="xl">
+              Ace any technical or behavioral questions with <Em>our most intelligent Copilot model</Em>.
+              Upload your resume, job details and more for <Em>full Copilot customization</Em>.
+              Choose your desired Copilot answer style, and review all your past interviews in one place.
+            </Text>
 
-          <Flex
-            rounded="full"
-            borderWidth="1px"
-            flexDirection="row"
-            alignItems="center"
-            py="1"
-            ps="8"
-            pe="2"
-            bg="primary.900"
-            _dark={{ bg: 'gray.900' }}
-          >
-            <Box>
-              <Text color="yellow.400" display="inline">
-                shareyoursuccess
-              </Text>{' '}
-              <Text color="cyan.300" display="inline">
-                #interviewpilot
-              </Text>
-            </Box>
-            <IconButton
-              icon={hasCopied ? <FiCheck /> : <FiCopy />}
-              aria-label="Copy install command"
-              onClick={onCopy}
-              variant="ghost"
-              ms="4"
-              isRound
-              color="white"
-            />
-          </Flex>
-        </VStack>
-      </HighlightsItem>
-      <HighlightsItem title="Voice Recognition">
-        <Text color="muted" fontSize="lg" position="relative" zIndex={1}>
-          Ranked 1st worldwide, Whisper is the world&apos;s most accurate AI speech recognition (ASR).<br></br><br></br>Interview Pilot is capable of detecting almost all languages and accents.
-        </Text>
-      </HighlightsItem>
-      <HighlightsItem title="Full Privacy">
-        <Text color="muted" fontSize="lg" position="relative" zIndex={1}>
-          Your data is secure and owned by you. All data processing uses indsutry-standard encryption.<br></br><br></br>We never store your app usage data.
-        </Text>
-      </HighlightsItem>
-      <HighlightsItem
-        colSpan={[1, null, 2]}
-        title="Get Ahead of Your Peers"
-      >
-        <Text color="muted" fontSize="lg" position="relative" zIndex={1}>
-          We take care of the trouble of recruiting and interviewing, so you can focus on what really matters: growing your skillset and career.
-        </Text>
-        <Wrap mt="8" position="relative" zIndex={1}>
-          {[
-            'consulting',
-            'product management',
-            'data science',
-            'software engineering',
-            'graphic design',
-            'sales',
-            'recruiting',
-            'customer success',
-            'finance',
-            'operations',
-            'legal',
-            'marketing',
-            'public relations',
-            'business development',
-            'human resources',
-            'project management',
-            'strategy',
-            'analytics',
-
-          ].map((value) => (
-            <Tag
-              key={value}
-              variant="subtle"
-              colorScheme="yellow"
+            <Flex
               rounded="full"
-              px="3"
+              bg="rgba(255, 255, 255, 0.05)"
+              backdropFilter="blur(10px)"
+              borderRadius="xl"
+              borderWidth="1px"
+              borderColor="rgba(255, 255, 255, 0.1)"
+              boxShadow="0 4px 20px rgba(0, 0, 0, 0.1)"
+              _hover={{
+                bg: "rgba(255, 255, 255, 0.08)",
+                transform: "translateY(-2px)",
+                boxShadow: "0 6px 24px rgba(0, 0, 0, 0.15)"
+              }}
+              transition="all 0.3s ease"
+              flexDirection="row"
+              alignItems="center"
+              py="1"
+              ps="8"
+              pe="2"
+              _dark={{ bg: 'gray.900' }}
             >
-              {value}
-            </Tag>
-          ))}
-        </Wrap>
-      </HighlightsItem>
-    </Highlights>
+              <Box>
+                <Text color="yellow.400" display="inline">
+                  shareyoursuccess
+                </Text>{' '}
+                <Text color="cyan.300" display="inline">
+                  #interviewpilot
+                </Text>
+              </Box>
+              <IconButton
+                icon={hasCopied ? <FiCheck /> : <FiCopy />}
+                aria-label="Copy install command"
+                onClick={onCopy}
+                variant="ghost"
+                ms="4"
+                isRound
+                color="white"
+              />
+            </Flex>
+          </VStack>
+        </HighlightsItem>
+        <HighlightsItem title="Voice Recognition">
+          <Text color="muted" fontSize="lg" position="relative" zIndex={1}>
+            Ranked 1st worldwide, Whisper is the world&apos;s most accurate AI speech recognition (ASR).<br></br><br></br>Interview Pilot is capable of detecting almost all languages and accents.
+          </Text>
+        </HighlightsItem>
+        <HighlightsItem title="Full Privacy">
+          <Text color="muted" fontSize="lg" position="relative" zIndex={1}>
+            Your data is secure and owned by you. All data processing uses indsutry-standard encryption.<br></br><br></br>We never store your app usage data.
+          </Text>
+        </HighlightsItem>
+        <HighlightsItem
+          colSpan={[1, null, 2]}
+          title="Get Ahead of Your Peers"
+        >
+          <Text color="muted" fontSize="lg" position="relative" zIndex={1}>
+            We take care of the trouble of recruiting and interviewing, so you can focus on what really matters: growing your skillset and career.
+          </Text>
+          <Wrap mt="8" position="relative" zIndex={1}>
+            {[
+              'consulting',
+              'product management',
+              'data science',
+              'software engineering',
+              'graphic design',
+              'sales',
+              'recruiting',
+              'customer success',
+              'finance',
+              'operations',
+              'legal',
+              'marketing',
+              'public relations',
+              'business development',
+              'human resources',
+              'project management',
+              'strategy',
+              'analytics',
+
+            ].map((value) => (
+              <Tag
+                key={value}
+                variant="subtle"
+                colorScheme="yellow"
+                rounded="full"
+                px="3"
+              >
+                {value}
+              </Tag>
+            ))}
+          </Wrap>
+        </HighlightsItem>
+      </Highlights>
     </Box>
   )
 }
@@ -615,99 +627,99 @@ const FeaturesSection = () => {
       <Features
         id="features"
         title={
-        <Heading
-          lineHeight="short"
-          fontSize={['2xl', null, '4xl']}
-          textAlign="left"
-          as="p"
-          className="main-title"
-          sx={{
-            fontSize: { base: '2xl', md: '3xl', lg: '4xl' }
-          }}
-        >
-          How to Use
-        </Heading>
-      }
-      description={
-        <>
-          Fully Undetectable. Completely fuss-free and easy to use.
-        </>
-      }
-      align="left"
-      columns={[1, 2, 3]}
-      iconSize={4}
-      spacing={14}
-      sx={{
-        ".chakra-simple-grid": {
-          rowGap: "4rem" // Add extra space between rows
-        },
-        ".feature-item, .saas-feature, & > div, & svg, & .chakra-icon, & [role='img']": {
-          position: "relative",
-          zIndex: 1
+          <Heading
+            lineHeight="short"
+            fontSize={['2xl', null, '4xl']}
+            textAlign="left"
+            as="p"
+            className="main-title"
+            sx={{
+              fontSize: { base: '2xl', md: '3xl', lg: '4xl' }
+            }}
+          >
+            How to Use
+          </Heading>
         }
-      }}
-      features={[
-        {
-          title: <Text fontSize={["xl", "2xl", "3xl"]} fontWeight="bold" mb={3}>Step 1</Text>,
-          icon: FiSmile,
-          description: (
-            <>
-              <Br />
-              Upload your resume and personal details.
-            </>
-          ),
-          variant: 'inline',
-        },
-        {
-          title: <Text fontSize={["xl", "2xl", "3xl"]} fontWeight="bold" mb={3}>Step 2</Text>,
-          icon: FiBriefcase,
-          description: (
-            <>
-              <Br />
-              Enter your job description and anything else important.
-            </>
-          ),
-          variant: 'inline',
-        },
-        {
-          title: <Text fontSize={["xl", "2xl", "3xl"]} fontWeight="bold" mb={3}>Step 3</Text>,
-          icon: FiBox,
-          description: (
-            <>
-              <Br />
-              Choose a response style, depending on what fits you.
-            </>
-          ),
-          variant: 'inline',
-        },
-        {
-          title: <Text fontSize={["xl", "2xl", "3xl"]} fontWeight="bold" mb={3}>Interview</Text>,
-          icon: FiMic,
-          description: (
-            <>
-              <Br />
-              Record a question. Generate an answer.
-            </>
-          ),
-          variant: 'inline',
-          iconColor: "cyan.400",  // Changed from blue.500 to cyan.500
-          iconBg: "rgba(207, 250, 254, 0.2)"
-        },
-        {
-          title: <Text fontSize={["xl", "2xl", "3xl"]} fontWeight="bold" mb={3}>Review</Text>,
-          icon: FiFlag,
-          description: (
-            <>
-              <Br />
-              Save and review all your past interviews to learn.
-            </>
-          ),
-          variant: 'inline',
-          iconColor: "cyan.400",  // Changed from blue.500 to cyan.500
-          iconBg: "rgba(207, 250, 254, 0.2)"
-        },
-      ]}
-    />
+        description={
+          <>
+            Fully Undetectable. Completely fuss-free and easy to use.
+          </>
+        }
+        align="left"
+        columns={[1, 2, 3]}
+        iconSize={4}
+        spacing={14}
+        sx={{
+          ".chakra-simple-grid": {
+            rowGap: "4rem" // Add extra space between rows
+          },
+          ".feature-item, .saas-feature, & > div, & svg, & .chakra-icon, & [role='img']": {
+            position: "relative",
+            zIndex: 1
+          }
+        }}
+        features={[
+          {
+            title: <Text fontSize={["xl", "2xl", "3xl"]} fontWeight="bold" mb={3}>Step 1</Text>,
+            icon: FiSmile,
+            description: (
+              <>
+                <Br />
+                Upload your resume and personal details.
+              </>
+            ),
+            variant: 'inline',
+          },
+          {
+            title: <Text fontSize={["xl", "2xl", "3xl"]} fontWeight="bold" mb={3}>Step 2</Text>,
+            icon: FiBriefcase,
+            description: (
+              <>
+                <Br />
+                Enter your job description and anything else important.
+              </>
+            ),
+            variant: 'inline',
+          },
+          {
+            title: <Text fontSize={["xl", "2xl", "3xl"]} fontWeight="bold" mb={3}>Step 3</Text>,
+            icon: FiBox,
+            description: (
+              <>
+                <Br />
+                Choose a response style, depending on what fits you.
+              </>
+            ),
+            variant: 'inline',
+          },
+          {
+            title: <Text fontSize={["xl", "2xl", "3xl"]} fontWeight="bold" mb={3}>Interview</Text>,
+            icon: FiMic,
+            description: (
+              <>
+                <Br />
+                Record a question. Generate an answer.
+              </>
+            ),
+            variant: 'inline',
+            iconColor: "cyan.400",  // Changed from blue.500 to cyan.500
+            iconBg: "rgba(207, 250, 254, 0.2)"
+          },
+          {
+            title: <Text fontSize={["xl", "2xl", "3xl"]} fontWeight="bold" mb={3}>Review</Text>,
+            icon: FiFlag,
+            description: (
+              <>
+                <Br />
+                Save and review all your past interviews to learn.
+              </>
+            ),
+            variant: 'inline',
+            iconColor: "cyan.400",  // Changed from blue.500 to cyan.500
+            iconBg: "rgba(207, 250, 254, 0.2)"
+          },
+        ]}
+      />
     </Box>
   )
 }
@@ -738,24 +750,36 @@ const TestimonialsSection = () => {
         columns={[1, 2, 3]}
         innerWidth="container.xl"
       >
-      <>
-        {columns.map((column, i) => (
-          <Stack key={i} spacing="8" position="relative" zIndex={1}>
-            {column.map((t, i) => (
-              <Testimonial
-                key={i}
-                {...t}
-                height="100%"
-                // These props ensure consistent heights within the grid
-                display="flex"
-                flexDirection="column"
-                justifyContent="space-between"
-              />
-            ))}
-          </Stack>
-        ))}
-      </>
-    </Testimonials>
+        <>
+          {columns.map((column, i) => (
+            <Stack key={i} spacing="8" position="relative" zIndex={1}>
+              {column.map((t, i) => (
+                <Testimonial
+                  key={i}
+                  {...t}
+                  height="100%"
+                  // These props ensure consistent heights within the grid
+                  display="flex"
+                  flexDirection="column"
+                  justifyContent="space-between"
+                  bg="rgba(255, 255, 255, 0.05)"
+                  backdropFilter="blur(10px)"
+                  borderRadius="xl"
+                  borderWidth="1px"
+                  borderColor="rgba(255, 255, 255, 0.1)"
+                  boxShadow="0 4px 20px rgba(0, 0, 0, 0.1)"
+                  _hover={{
+                    bg: "rgba(255, 255, 255, 0.08)",
+                    transform: "translateY(-2px)",
+                    boxShadow: "0 6px 24px rgba(0, 0, 0, 0.15)"
+                  }}
+                  transition="all 0.3s ease"
+                />
+              ))}
+            </Stack>
+          ))}
+        </>
+      </Testimonials>
     </Box>
   )
 }

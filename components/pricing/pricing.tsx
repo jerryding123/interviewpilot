@@ -131,16 +131,24 @@ const PricingBox: React.FC<PricingBoxProps> = (props) => {
   return (
     <VStack
       zIndex="2"
-      bg="whiteAlpha.600"
-      borderRadius="md"
+      bg="rgba(255, 255, 255, 0.05)"
+      backdropFilter="blur(10px)"
+      borderRadius="xl"
       p="8"
       flex="1 0"
       alignItems="stretch"
-      border="1px solid"
-      borderColor="gray.400"
+      borderWidth="1px"
+      borderColor="rgba(255, 255, 255, 0.1)"
+      boxShadow="0 4px 20px rgba(0, 0, 0, 0.1)"
+      _hover={{
+        bg: "rgba(255, 255, 255, 0.08)",
+        transform: "translateY(-2px)",
+        boxShadow: "0 6px 24px rgba(0, 0, 0, 0.15)"
+      }}
+      transition="all 0.3s ease"
       _dark={{
-        bg: 'blackAlpha.300',
-        borderColor: 'gray.800',
+        bg: 'rgba(255, 255, 255, 0.05)',
+        borderColor: 'rgba(255, 255, 255, 0.1)',
       }}
       {...rest}
     >

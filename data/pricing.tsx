@@ -1,8 +1,8 @@
 import { HStack, Text, VStack } from '@chakra-ui/react'
 
 export default {
-  title: 'Simple Pricing',
-  description: 'Simple, transparent pricing for everyone',
+  title: 'Pricing',
+  description: 'Simple, transparent pricing for all',
   plans: [
     {
       id: 'free',

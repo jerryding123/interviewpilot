@@ -15,10 +15,10 @@ interface NavigationProps {
   mobileMode?: boolean; // Added new prop
 }
 
-const Navigation: React.FC<NavigationProps> = ({ 
-  centerLinks = false, 
+const Navigation: React.FC<NavigationProps> = ({
+  centerLinks = false,
   insetButtons = false,
-  mobileMode = false 
+  mobileMode = false
 }) => {
   const mobileNav = useDisclosure()
   const router = useRouter()
@@ -31,24 +31,24 @@ const Navigation: React.FC<NavigationProps> = ({
       threshold: 0.75,
     },
   )
-  
+
   const mobileNavBtnRef = React.useRef<HTMLButtonElement>()
-  
+
   useUpdateEffect(() => {
     mobileNavBtnRef.current?.focus()
   }, [mobileNav.isOpen])
-  
+
   // Split the navigation - everything except the last item (Download)
   const navLinks = siteConfig.header.links.slice(0, -1)
   // Get the Download button (last item)
   const downloadButton = siteConfig.header.links[siteConfig.header.links.length - 1]
-  
+
   if (centerLinks) {
     return (
       <Grid templateColumns="1fr auto 1fr" width="100%" gap={4}>
         {/* Left column - empty to balance with right column */}
         <GridItem />
-        
+
         {/* Center column - navigation links */}
         <GridItem>
           <Flex justify="center">
@@ -80,18 +80,23 @@ const Navigation: React.FC<NavigationProps> = ({
             })}
           </Flex>
         </GridItem>
-        
+
         {/* Right column - Download button, theme toggle, mobile nav */}
         <GridItem>
           {/* Apply right padding conditionally based on screen size and mobileMode */}
-          <HStack 
-            spacing={2} 
-            justify="flex-end" 
+          <HStack
+            spacing={2}
+            justify="flex-end"
             pr={insetButtons ? { base: mobileMode ? 0 : 6, lg: 8 } : 0}
           >
             <NavLink
               display={['none', null, 'block']}
               href={downloadButton.href || `/#${downloadButton.id}`}
+              borderRadius="full"
+              px={4}           // Increase horizontal padding
+              py={0}           // Add vertical padding
+              fontSize="md"
+              fontWeight="bold"
               isActive={
                 !!(
                   (downloadButton.id && activeId === downloadButton.id) ||
@@ -102,11 +107,11 @@ const Navigation: React.FC<NavigationProps> = ({
             >
               {downloadButton.label}
             </NavLink>
-            
+
             <Box>
               <ThemeToggle />
             </Box>
-            
+
             <Box>
               <MobileNavButton
                 ref={mobileNavBtnRef}
@@ -114,14 +119,14 @@ const Navigation: React.FC<NavigationProps> = ({
                 onClick={mobileNav.onOpen}
               />
             </Box>
-            
+
             <MobileNavContent isOpen={mobileNav.isOpen} onClose={mobileNav.onClose} />
           </HStack>
         </GridItem>
       </Grid>
     )
   }
-  
+
   // Original layout if centerLinks is false
   return (
     <HStack spacing="2" flexShrink={0}>
