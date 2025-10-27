@@ -39,7 +39,14 @@ export const Pricing: React.FC<PricingProps> = (props) => {
   const { children, plans, title, description, ...rest } = props
   return (
     <Section id="pricing" {...rest}>
-      <SectionTitle title={title} description={description}></SectionTitle>
+      {/* zIndex ensures title/description remain visible above the grid overlay */}
+      <SectionTitle 
+        title={title} 
+        description={description}
+        mb={8}
+        pos="relative"
+        zIndex={1}
+      />
       <SimpleGrid columns={[1, null, 3]} spacing={4}>
         {plans?.map((plan) => (
           <PricingBox
@@ -63,9 +70,12 @@ export const Pricing: React.FC<PricingProps> = (props) => {
             <PricingFeatures>
               {plan.features.map((feature, i) =>
                 feature ? (
-                  <PricingFeature key={i} {...feature} />
+                  <PricingFeature 
+                    key={`${plan.id}-feature-${i}`} 
+                    {...feature} 
+                  />
                 ) : (
-                  <br key={i} />
+                  <br key={`${plan.id}-spacer-${i}`} />
                 ),
               )}
             </PricingFeatures>
@@ -85,7 +95,7 @@ export const Pricing: React.FC<PricingProps> = (props) => {
   )
 }
 
-const PricingFeatures: React.FC<React.PropsWithChildren<{}>> = ({
+const PricingFeatures: React.FC<React.PropsWithChildren> = ({
   children,
 }) => {
   return (
