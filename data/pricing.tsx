@@ -7,7 +7,7 @@ export default {
     {
       id: 'free',
       title: 'Free',
-      description: 'Try full features for free',
+      description: 'Try full features for FREE',
       price: 'Free',
       features: [
         {
