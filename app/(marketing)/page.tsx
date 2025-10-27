@@ -336,7 +336,7 @@ const HeroSection: React.FC = () => {
             }
             description={
               <FallInPlace delay={0.4} fontWeight="medium">
-                <Text fontSize={{ base: "2xl", md: "3xl" }} position="relative" zIndex={1}>  {/* Slightly reduced */}
+                <Text fontSize={{ base: "xl", md: "2xl", lg: "3xl" }} position="relative" zIndex={1}>  {/* Slightly reduced */}
                   Get <Em>real-time</Em> interview answers
                   <Br /> during your interview with <Em>Copilot</Em><Br />{' '}
                 </Text>
@@ -348,13 +348,13 @@ const HeroSection: React.FC = () => {
               <HStack pt="8" pb="12" spacing="8" position="relative" zIndex={1}>
                 <Image
                   src="/static/images/openailogo.png"
-                  width={145}
+                  width={135}
                   height={20}
                   alt="OpenAI Logo"
                 />
                 <Image
                   src="/static/images/whisperlogo.png"
-                  width={160}
+                  width={150}
                   height={20}
                   alt="Whisper Logo"
                 />
@@ -402,7 +402,7 @@ const HeroSection: React.FC = () => {
             position={{ base: "relative", lg: "relative" }}  // Changed to relative for all views
             display="block"
             order={{ base: 1, lg: 2 }}
-            mb={{ base: 40, sm: 40, md: 40, lg: 0 }}  // Increased bottom margin for mobile views
+            mb={{ base: 0, sm: 0, md: 40, lg: 0 }}  // Increased bottom margin for mobile views
           >
             <FallInPlace delay={1}>
               <Box
