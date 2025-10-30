@@ -50,7 +50,7 @@ const siteConfig = {
     copyright: (
       <>
         Developed by{' '}
-        <Link href="https://www.liberaceai.com">Liberace Pte. Ltd.</Link> © 2025 • Built in San Francisco, California
+        <Link href="https://www.liberaceai.com">Liberace Pte. Ltd.</Link> © 2023-2025 • Built in San Francisco, California
       </>
     ),
     links: [
