@@ -82,7 +82,7 @@ export const Footer: React.FC<FooterProps> = (props) => {
                   />
                 </Link>
                 <Image
-                  src="/static/images/playstore_badge.png"
+                  src="/static/images/android_badge.png"
                   alt="Get it on Google Play"
                   height="40px"
                 />
