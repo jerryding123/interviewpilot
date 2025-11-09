@@ -34,7 +34,41 @@ export const Footer: React.FC<FooterProps> = (props) => {
                 {siteConfig.seo.description}
               </Text>
             </Stack>
-            <Copyright>{siteConfig.footer.copyright}</Copyright>
+            <Stack spacing="2">
+              <Box
+                border="1px solid"
+                borderColor="gray.700"
+                borderRadius="md"
+                px="3"
+                py="2"
+                display="inline-flex"
+                alignItems="center"
+                gap="2"
+                width="fit-content"
+              >
+                <Box
+                  w="8px"
+                  h="8px"
+                  borderRadius="full"
+                  bg="green.400"
+                  animation="pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite"
+                  sx={{
+                    '@keyframes pulse': {
+                      '0%, 100%': {
+                        opacity: 1,
+                      },
+                      '50%': {
+                        opacity: 0.5,
+                      },
+                    },
+                  }}
+                />
+                <Text fontSize="sm" color="white" fontWeight="medium">
+                  All Systems Online
+                </Text>
+              </Box>
+              <Copyright>{siteConfig.footer.copyright}</Copyright>
+            </Stack>
           </Stack>
           
           {/* Use Wrap for better mobile layout of links */}
