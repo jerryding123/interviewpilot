@@ -42,11 +42,11 @@ export const Footer: React.FC<FooterProps> = (props) => {
                   borderColor="gray.700"
                   borderRadius="md"
                   px="3"
-                  py="2"
                   display="inline-flex"
                   alignItems="center"
                   gap="2"
                   width="fit-content"
+                  height="40px"
                 >
                   <Box
                     w="8px"
