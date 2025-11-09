@@ -3,6 +3,7 @@ import {
   BoxProps,
   Container,
   Flex,
+  Image,
   SimpleGrid,
   Stack,
   Text,
@@ -35,38 +36,57 @@ export const Footer: React.FC<FooterProps> = (props) => {
               </Text>
             </Stack>
             <Stack spacing="2">
-              <Box
-                border="1px solid"
-                borderColor="gray.700"
-                borderRadius="md"
-                px="3"
-                py="2"
-                display="inline-flex"
-                alignItems="center"
-                gap="2"
-                width="fit-content"
-              >
+              <Flex gap="4" alignItems="center" flexWrap="wrap">
                 <Box
-                  w="8px"
-                  h="8px"
-                  borderRadius="full"
-                  bg="green.400"
-                  animation="pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite"
-                  sx={{
-                    '@keyframes pulse': {
-                      '0%, 100%': {
-                        opacity: 1,
+                  border="1px solid"
+                  borderColor="gray.700"
+                  borderRadius="md"
+                  px="3"
+                  py="2"
+                  display="inline-flex"
+                  alignItems="center"
+                  gap="2"
+                  width="fit-content"
+                >
+                  <Box
+                    w="8px"
+                    h="8px"
+                    borderRadius="full"
+                    bg="green.400"
+                    animation="pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite"
+                    sx={{
+                      '@keyframes pulse': {
+                        '0%, 100%': {
+                          opacity: 1,
+                        },
+                        '50%': {
+                          opacity: 0.5,
+                        },
                       },
-                      '50%': {
-                        opacity: 0.5,
-                      },
-                    },
-                  }}
+                    }}
+                  />
+                  <Text fontSize="sm" color="white" fontWeight="medium">
+                    All Systems Online
+                  </Text>
+                </Box>
+                <Link
+                  href="https://apps.apple.com/us/app/interview-pilot-ai-copilot/id6743263009"
+                  isExternal
+                  _hover={{ opacity: 0.8 }}
+                  transition="opacity 0.2s"
+                >
+                  <Image
+                    src="/static/images/appstore_badge.png"
+                    alt="Download on the App Store"
+                    height="40px"
+                  />
+                </Link>
+                <Image
+                  src="/static/images/playstore_badge.png"
+                  alt="Get it on Google Play"
+                  height="40px"
                 />
-                <Text fontSize="sm" color="white" fontWeight="medium">
-                  All Systems Online
-                </Text>
-              </Box>
+              </Flex>
               <Copyright>{siteConfig.footer.copyright}</Copyright>
             </Stack>
           </Stack>
