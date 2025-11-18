@@ -35,8 +35,8 @@ export const Footer: React.FC<FooterProps> = (props) => {
                 {siteConfig.seo.description}
               </Text>
             </Stack>
-            <Stack spacing="2">
-              <Flex gap="4" alignItems="center" flexWrap="wrap">
+            <Stack spacing="4">
+              <Stack direction={{ base: "column", md: "row" }} gap="4" alignItems={{ base: "flex-start", md: "center" }}>
                 <Box
                   border="1px solid"
                   borderColor="gray.700"
@@ -69,31 +69,33 @@ export const Footer: React.FC<FooterProps> = (props) => {
                     All Systems Online
                   </Text>
                 </Box>
-                <Link
-                  href="https://apps.apple.com/us/app/interview-pilot-ai-copilot/id6743263009"
-                  isExternal
-                  _hover={{ opacity: 0.8 }}
-                  transition="opacity 0.2s"
-                >
-                  <Image
-                    src="/static/images/appstore_badge.png"
-                    alt="Download on the App Store"
-                    height="40px"
-                  />
-                </Link>
-                <Link
-                  href="https://play.google.com/store/apps/details?id=com.liberace.interviewpilot"
-                  isExternal
-                  _hover={{ opacity: 0.8 }}
-                  transition="opacity 0.2s"
-                >
-                  <Image
-                    src="/static/images/android_badge.png"
-                    alt="Get it on Google Play"
-                    height="40px"
-                  />
-                </Link>
-              </Flex>
+                <Flex gap="4" alignItems="center">
+                  <Link
+                    href="https://apps.apple.com/us/app/interview-pilot-ai-copilot/id6743263009"
+                    isExternal
+                    _hover={{ opacity: 0.8 }}
+                    transition="opacity 0.2s"
+                  >
+                    <Image
+                      src="/static/images/appstore_badge.png"
+                      alt="Download on the App Store"
+                      height="40px"
+                    />
+                  </Link>
+                  <Link
+                    href="https://play.google.com/store/apps/details?id=com.liberace.interviewpilot"
+                    isExternal
+                    _hover={{ opacity: 0.8 }}
+                    transition="opacity 0.2s"
+                  >
+                    <Image
+                      src="/static/images/android_badge.png"
+                      alt="Get it on Google Play"
+                      height="40px"
+                    />
+                  </Link>
+                </Flex>
+              </Stack>
               <Copyright>{siteConfig.footer.copyright}</Copyright>
             </Stack>
           </Stack>
