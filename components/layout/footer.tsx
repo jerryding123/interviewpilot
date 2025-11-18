@@ -101,8 +101,8 @@ export const Footer: React.FC<FooterProps> = (props) => {
           </Stack>
           
           {/* Use Wrap for better mobile layout of links */}
-          <Stack spacing="4" alignSelf={{ base: "flex-start", md: "flex-end" }}>
-            <Stack direction={{ base: "column", md: "row" }} spacing="4" alignItems={{ base: "flex-start", md: "flex-end" }}>
+          <Stack spacing="4" alignSelf={{ base: "flex-start", md: "flex-end" }} width={{ base: "100%", md: "auto" }}>
+            <Stack direction={{ base: "column", md: "row" }} spacing="4" alignItems={{ base: "flex-start", md: "center" }} justify={{ base: "flex-start", md: "flex-end" }}>
               {/* Text links */}
               <Wrap justify={{ base: "flex-start", md: "flex-end" }} spacing="4">
                 {siteConfig.footer?.links?.slice(0, 3).map(({ href, label }) => (
