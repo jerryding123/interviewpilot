@@ -414,7 +414,7 @@ const HeroSection: React.FC = () => {
                         />
                       ) : platform === 'android' ? (
                         <Image
-                          src="/static/images/google_play.png"
+                          src="/static/images/google_playstore.png"
                           width={14}
                           height={14}
                           alt="Google Play"
