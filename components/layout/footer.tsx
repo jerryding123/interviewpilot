@@ -81,11 +81,18 @@ export const Footer: React.FC<FooterProps> = (props) => {
                     height="40px"
                   />
                 </Link>
-                <Image
-                  src="/static/images/android_badge.png"
-                  alt="Get it on Google Play"
-                  height="40px"
-                />
+                <Link
+                  href="https://play.google.com/store/apps/details?id=com.liberace.interviewpilot"
+                  isExternal
+                  _hover={{ opacity: 0.8 }}
+                  transition="opacity 0.2s"
+                >
+                  <Image
+                    src="/static/images/android_badge.png"
+                    alt="Get it on Google Play"
+                    height="40px"
+                  />
+                </Link>
               </Flex>
               <Copyright>{siteConfig.footer.copyright}</Copyright>
             </Stack>

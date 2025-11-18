@@ -79,6 +79,27 @@ const handleDownloadClick = () => {
   window.location.href = '/download/hero';
 };
 
+// Hook to detect platform
+const usePlatform = () => {
+  const [platform, setPlatform] = React.useState<'ios' | 'android'>('ios');
+
+  React.useEffect(() => {
+    const userAgent = navigator.userAgent || navigator.vendor || (window as any).opera;
+    const isIOS = /iPad|iPhone|iPod/.test(userAgent) && !(window as any).MSStream;
+    const isAndroid = /android/i.test(userAgent);
+
+    if (isIOS) {
+      setPlatform('ios');
+    } else if (isAndroid) {
+      setPlatform('android');
+    } else {
+      setPlatform('ios'); // Default to iOS for desktop
+    }
+  }, []);
+
+  return platform;
+};
+
 const SystemStatus = () => {
   const [visible, setVisible] = React.useState(true);
   const [scrollPos, setScrollPos] = React.useState(0);
@@ -160,6 +181,7 @@ const SystemStatus = () => {
 const AppStoreBanner = () => {
   const [visible, setVisible] = React.useState(true);
   const [scrollPos, setScrollPos] = React.useState(0);
+  const platform = usePlatform();
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -176,15 +198,6 @@ const AppStoreBanner = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, [scrollPos]);
-
-  // Updated handler to use internal redirect route
-  const handleButtonClick = (e) => {
-    e.preventDefault(); // Prevent default navigation
-    setVisible(true); // Keep banner visible
-
-    // This will show up as a page view in Vercel Analytics
-    window.location.href = '/download/mobile';
-  };
 
   return (
     <Box
@@ -224,17 +237,34 @@ const AppStoreBanner = () => {
             </Text>
           </HStack>
           <Text color="gray.300" fontSize="xs">
-            Download on the App Store
+            {platform === 'ios' ? 'Download on the App Store' : 'Get it on Google Play'}
           </Text>
         </VStack>
       </Stack>
 
       <ButtonLink
-        href="/download/mobile"
+        href="/download/hero"
         colorScheme="primary"
         size="sm"
         color="black"
         fontWeight="bold"
+        leftIcon={
+          platform === 'ios' ? (
+            <Image
+              src="/static/images/apple_play.png"
+              width={14}
+              height={14}
+              alt="Apple"
+            />
+          ) : (
+            <Image
+              src="/static/images/google_play.png"
+              width={14}
+              height={14}
+              alt="Google Play"
+            />
+          )
+        }
       >
         Try It Now
       </ButtonLink>
@@ -273,6 +303,8 @@ const Home: NextPage = () => {
 }
 
 const HeroSection: React.FC = () => {
+  const platform = usePlatform();
+
   return (
     <Box overflow="hidden">
       <Container maxW="container.xl" pt={{ base: 36, lg: 48 }} pb="0">
@@ -369,6 +401,23 @@ const HeroSection: React.FC = () => {
                   fontWeight="bold"
                   onClick={handleDownloadClick}
                   borderRadius="full"
+                  leftIcon={
+                    platform === 'ios' ? (
+                      <Image
+                        src="/static/images/apple_play.png"
+                        width={14}
+                        height={14}
+                        alt="Apple"
+                      />
+                    ) : (
+                      <Image
+                        src="/static/images/google_play.png"
+                        width={14}
+                        height={14}
+                        alt="Google Play"
+                      />
+                    )
+                  }
                 >
                   Download
                 </ButtonLink>
