@@ -57,11 +57,15 @@ export const Pricing: React.FC<PricingProps> = (props) => {
   }, [])
 
   // Get platform-specific href
-  const getPlatformHref = (originalHref?: string) => {
+  const getPlatformHref = (originalHref?: string | object) => {
     if (platform === 'android') {
       return 'https://play.google.com/store/apps/details?id=com.liberace.interviewpilot'
     }
-    return originalHref || 'https://apps.apple.com/us/app/interview-pilot-ai-copilot/id6743263009'
+    // If originalHref is a string, use it; otherwise use default
+    if (typeof originalHref === 'string') {
+      return originalHref
+    }
+    return 'https://apps.apple.com/us/app/interview-pilot-ai-copilot/id6743263009'
   }
 
   return (
