@@ -266,7 +266,7 @@ const AppStoreBanner = () => {
           )
         }
       >
-        Install Now
+        Try It Now
       </ButtonLink>
 
     </Box>

@@ -38,6 +38,32 @@ export interface PricingProps extends SectionProps {
 
 export const Pricing: React.FC<PricingProps> = (props) => {
   const { children, plans, title, description, align, ...rest } = props
+
+  // Platform detection
+  const [platform, setPlatform] = React.useState<'ios' | 'android' | 'desktop'>('desktop')
+
+  React.useEffect(() => {
+    const userAgent = navigator.userAgent || navigator.vendor || (window as any).opera
+    const isIOS = /iPad|iPhone|iPod/.test(userAgent) && !(window as any).MSStream
+    const isAndroid = /android/i.test(userAgent)
+
+    if (isIOS) {
+      setPlatform('ios')
+    } else if (isAndroid) {
+      setPlatform('android')
+    } else {
+      setPlatform('desktop')
+    }
+  }, [])
+
+  // Get platform-specific href
+  const getPlatformHref = (originalHref?: string) => {
+    if (platform === 'android') {
+      return 'https://play.google.com/store/apps/details?id=com.liberace.interviewpilot'
+    }
+    return originalHref || 'https://apps.apple.com/us/app/interview-pilot-ai-copilot/id6743263009'
+  }
+
   return (
     <Section id="pricing" {...rest}>
       {/* zIndex ensures title/description remain visible above the grid overlay */}
@@ -72,20 +98,21 @@ export const Pricing: React.FC<PricingProps> = (props) => {
             <PricingFeatures>
               {plan.features.map((feature, i) =>
                 feature ? (
-                  <PricingFeature 
-                    key={`${plan.id}-feature-${i}`} 
-                    {...feature} 
+                  <PricingFeature
+                    key={`${plan.id}-feature-${i}`}
+                    {...feature}
                   />
                 ) : (
                   <br key={`${plan.id}-spacer-${i}`} />
                 ),
               )}
             </PricingFeatures>
-            <ButtonLink 
-              colorScheme="primary" 
+            <ButtonLink
+              colorScheme="primary"
               color="black"
               borderRadius="full"
               {...plan.action}
+              href={getPlatformHref(plan.action.href)}
             >
               {plan.action.label || 'Continue'}
             </ButtonLink>
