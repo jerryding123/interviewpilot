@@ -251,14 +251,14 @@ const AppStoreBanner = () => {
         leftIcon={
           platform === 'ios' ? (
             <Image
-              src="/static/images/apple_play.png"
+              src="/static/images/apple_appstore.png"
               width={14}
               height={14}
               alt="Apple"
             />
           ) : (
             <Image
-              src="/static/images/google_play.png"
+              src="/static/images/google_playstore.png"
               width={14}
               height={14}
               alt="Google Play"
@@ -286,6 +286,8 @@ const Home: NextPage = () => {
       <HighlightsSection />
 
       <FeaturesSection />
+
+      <DownloadOptionsSection />
 
       <TestimonialsSection />
 
@@ -392,56 +394,67 @@ const HeroSection: React.FC = () => {
                 />
               </HStack>
 
-              <ButtonGroup spacing={4} alignItems="center" position="relative" zIndex={1}>
-                <ButtonLink
-                  colorScheme="primary"
-                  color="black"
-                  size="lg"
-                  href="/download/hero"
-                  fontWeight="bold"
-                  onClick={handleDownloadClick}
-                  borderRadius="full"
-                  leftIcon={
-                    platform === 'ios' ? (
-                      <Image
-                        src="/static/images/apple_play.png"
-                        width={14}
-                        height={14}
-                        alt="Apple"
+              <VStack spacing={4} alignItems="flex-start" position="relative" zIndex={1}>
+                <ButtonGroup spacing={4} alignItems="center">
+                  <ButtonLink
+                    colorScheme="primary"
+                    color="black"
+                    size="lg"
+                    href="/download/hero"
+                    fontWeight="bold"
+                    onClick={handleDownloadClick}
+                    borderRadius="full"
+                    leftIcon={
+                      platform === 'ios' ? (
+                        <Image
+                          src="/static/images/apple_appstore.png"
+                          width={14}
+                          height={14}
+                          alt="Apple"
+                        />
+                      ) : (
+                        <Image
+                          src="/static/images/google_play.png"
+                          width={14}
+                          height={14}
+                          alt="Google Play"
+                        />
+                      )
+                    }
+                  >
+                    Download
+                  </ButtonLink>
+                  <ButtonLink
+                    size="lg"
+                    href="#features"
+                    variant="outline"
+                    borderRadius="full"
+                    rightIcon={
+                      <Icon
+                        as={FiArrowRight}
+                        sx={{
+                          transitionProperty: 'common',
+                          transitionDuration: 'normal',
+                          '.chakra-button:hover &': {
+                            transform: 'translate(5px)',
+                          },
+                        }}
                       />
-                    ) : (
-                      <Image
-                        src="/static/images/google_play.png"
-                        width={14}
-                        height={14}
-                        alt="Google Play"
-                      />
-                    )
-                  }
+                    }
+                  >
+                    Learn More
+                  </ButtonLink>
+                </ButtonGroup>
+                <Link
+                  href="#download-options"
+                  fontSize="sm"
+                  color="muted"
+                  textDecoration="underline"
+                  _hover={{ color: 'white' }}
                 >
-                  Download
-                </ButtonLink>
-                <ButtonLink
-                  size="lg"
-                  href="#features"
-                  variant="outline"
-                  borderRadius="full"
-                  rightIcon={
-                    <Icon
-                      as={FiArrowRight}
-                      sx={{
-                        transitionProperty: 'common',
-                        transitionDuration: 'normal',
-                        '.chakra-button:hover &': {
-                          transform: 'translate(5px)',
-                        },
-                      }}
-                    />
-                  }
-                >
-                  Learn More
-                </ButtonLink>
-              </ButtonGroup>
+                  More download options
+                </Link>
+              </VStack>
             </FallInPlace>
           </Hero>
 
@@ -769,6 +782,75 @@ const FeaturesSection = () => {
           },
         ]}
       />
+    </Box>
+  )
+}
+
+const DownloadOptionsSection = () => {
+  return (
+    <Box
+      id="download-options"
+      py={20}
+      sx={{
+        "& h1, & h2, & h3, & h4, & h5, & h6, & .chakra-heading, & .chakra-text, & p, & svg, & .chakra-icon": {
+          position: "relative",
+          zIndex: 1
+        }
+      }}
+    >
+      <Container maxW="container.md">
+        <VStack spacing={8} position="relative" zIndex={1}>
+          <Heading
+            lineHeight="short"
+            fontSize={['2xl', null, '4xl']}
+            textAlign="center"
+            as="h2"
+          >
+            Download Options
+          </Heading>
+          <Text fontSize="lg" color="muted" textAlign="center">
+            Choose your platform to download Interview Pilot
+          </Text>
+
+          <Flex
+            direction={{ base: 'column', md: 'row' }}
+            gap={6}
+            width="100%"
+            justify="center"
+            align="center"
+          >
+            {/* iOS Download */}
+            <Link
+              href="https://apps.apple.com/us/app/interview-pilot-ai-copilot/id6743263009"
+              isExternal
+              _hover={{ opacity: 0.8 }}
+              transition="opacity 0.2s"
+            >
+              <Image
+                src="/static/images/appstore_badge.png"
+                alt="Download on the App Store"
+                width={200}
+                height={60}
+              />
+            </Link>
+
+            {/* Android Download */}
+            <Link
+              href="https://play.google.com/store/apps/details?id=com.liberace.interviewpilot"
+              isExternal
+              _hover={{ opacity: 0.8 }}
+              transition="opacity 0.2s"
+            >
+              <Image
+                src="/static/images/android_badge.png"
+                alt="Get it on Google Play"
+                width={200}
+                height={60}
+              />
+            </Link>
+          </Flex>
+        </VStack>
+      </Container>
     </Box>
   )
 }
