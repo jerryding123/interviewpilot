@@ -15,7 +15,7 @@ export default function TermsPage() {
         </Text>
 
         <Text>
-          Interview Pilot is a brand owned by Liberace Pte. Ltd. (&quot;we,&quot; &quot;us,&quot; &quot;our&quot;). Liberace operates the Interview Pilot iOS application and provides related products and services (collectively, the &quot;Services&quot;). These Terms of Service (&quot;Terms&quot;) constitute a legally binding agreement between you (&quot;you,&quot; &quot;your&quot;) and Liberace Pte. Ltd., governing your access to and use of the Services. You agree that by downloading, installing, or accessing the Services, you have read, understood, and agreed to be bound by these Terms. IF YOU DO NOT AGREE WITH ALL OF THESE TERMS, THEN YOU ARE PROHIBITED FROM USING THE SERVICES AND MUST IMMEDIATELY DISCONTINUE USE.
+          Interview Pilot is a brand owned by Liberace Pte. Ltd. (&quot;we,&quot; &quot;us,&quot; &quot;our&quot;). Liberace operates the Interview Pilot mobile application (iOS and Android) and provides related products and services (collectively, the &quot;Services&quot;). These Terms of Service (&quot;Terms&quot;) constitute a legally binding agreement between you (&quot;you,&quot; &quot;your&quot;) and Liberace Pte. Ltd., governing your access to and use of the Services. You agree that by downloading, installing, or accessing the Services, you have read, understood, and agreed to be bound by these Terms. IF YOU DO NOT AGREE WITH ALL OF THESE TERMS, THEN YOU ARE PROHIBITED FROM USING THE SERVICES AND MUST IMMEDIATELY DISCONTINUE USE.
         </Text>
         
         <Text fontWeight="bold">
@@ -29,7 +29,7 @@ export default function TermsPage() {
           
           <Text fontWeight="bold" mt={3}>1.1 Description of Services</Text>
           <Text>
-            Liberace provides Interview Pilot, an AI-powered iOS application that assists with job interview preparation and real-time interview support. The app records live interview questions and generates AI responses to help users during interviews. The Services include both free and premium subscription offerings, with the free version providing limited functionality. Interview Pilot does not control your device or make decisions on your behalf.
+            Liberace provides Interview Pilot, an AI-powered mobile application (iOS and Android) that assists with job interview preparation and real-time interview support. The app records live interview questions and generates AI responses to help users during interviews. The Services include both free and premium subscription offerings, with the free version providing limited functionality. Interview Pilot does not control your device or make decisions on your behalf.
           </Text>
           <Text mt={2}>
             Interview Pilot also provides access to Basecamp features, including a database of interview questions, AI feedback, and analytics. Questions featured in the Services may be sourced from publicly available online materials, user submissions, or commonly asked interview questions at certain companies or in specific roles. We do not guarantee that any question displayed has been asked—or will be asked—by a specific company. All content is provided solely for educational and preparation purposes.
@@ -48,12 +48,12 @@ export default function TermsPage() {
           
           <Text fontWeight="bold" mt={3}>2.1 Account Registration</Text>
           <Text>
-            You may need to create an Apple ID to download and use the Services. You are entirely responsible for the security and confidentiality of your Apple account, including your password. Furthermore, you are entirely responsible for any and all activities that occur under your Apple account when using our Services.
+            You may need to create an Apple ID (for iOS) or Google account (for Android) to download and use the Services. You are entirely responsible for the security and confidentiality of your account, including your password. Furthermore, you are entirely responsible for any and all activities that occur under your account when using our Services.
           </Text>
           
           <Text fontWeight="bold" mt={3}>2.2 Payment Terms</Text>
           <Text>
-            All payments and subscriptions are processed through Apple&apos;s App Store. The subscription includes full access to Interview Pilot features, automatic updates, and customer support. By subscribing to our paid services, you agree to the App Store&apos;s payment terms and authorize Apple to charge your chosen payment method. Subscription management, including cancellation, is handled through your Apple ID account settings.
+            All payments and subscriptions are processed through Apple&apos;s App Store (for iOS) or Google Play Store (for Android). The subscription includes full access to Interview Pilot features, automatic updates, and customer support. By subscribing to our paid services, you agree to the respective app store&apos;s payment terms and authorize them to charge your chosen payment method. Subscription management, including cancellation, is handled through your Apple ID account settings (iOS) or Google Play account settings (Android).
           </Text>
         </Box>
         

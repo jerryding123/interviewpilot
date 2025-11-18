@@ -8,7 +8,7 @@ return (
 </Heading>
 <VStack spacing={6} align="stretch">
 <Text>
- Interview Pilot values your privacy and is committed to protecting your personal data. This Privacy Policy explains how we handle your information when you use our iOS application.
+ Interview Pilot values your privacy and is committed to protecting your personal data. This Privacy Policy explains how we handle your information when you use our mobile application (iOS and Android).
 </Text>
 <Box>
 <Heading as="h2" size="md" mb={2}>
@@ -37,7 +37,7 @@ return (
  Data Security
 </Heading>
 <Text>
- Processing of your interview questions is handled securely by our AI provider using industry-standard encryption. No personal data or content is stored in our servers. Any data stored in files remains local to your device or within your iCloud, depending on your storage settings.
+ Processing of your interview questions is handled securely by our AI provider using industry-standard encryption. No personal data or content is stored in our servers. Any data stored in files remains local to your device or within your iCloud (iOS only), depending on your storage settings.
 </Text>
 <Text mt={2}>
  We implement industry-standard security measures to protect any data that may be processed through our service. However, as no system is completely secure, we recommend using strong security practices on your devices.
@@ -56,7 +56,7 @@ return (
  Data Retention
 </Heading>
 <Text>
- Any data created while using our app (such as interview responses) is stored locally on your device and on iCloud and remains there until you choose to delete it. You can delete this data at any time by deleting the app from your device or by deleting the data from iCloud.
+ Any data created while using our app (such as interview responses) is stored locally on your device and on iCloud (iOS only) and remains there until you choose to delete it. You can delete this data at any time by deleting the app from your device or by deleting the data from iCloud (iOS only).
 </Text>
 </Box>
 <Box>
@@ -72,7 +72,7 @@ return (
  Your Rights
 </Heading>
 <Text>
- You have the right to access, modify, or delete any of your data that might be stored in the app. Since data is stored locally on your device or on iCloud, you can exercise these rights directly by managing your device storage or iCloud storage.
+ You have the right to access, modify, or delete any of your data that might be stored in the app. Since data is stored locally on your device or on iCloud (iOS only), you can exercise these rights directly by managing your device storage or iCloud storage (iOS only).
 </Text>
 </Box>
 <Box>
