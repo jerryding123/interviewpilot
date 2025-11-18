@@ -33,16 +33,18 @@ export interface PricingPlan {
 export interface PricingProps extends SectionProps {
   description: React.ReactNode
   plans: Array<PricingPlan>
+  align?: 'left' | 'center' | { base: 'center'; md: 'left' }
 }
 
 export const Pricing: React.FC<PricingProps> = (props) => {
-  const { children, plans, title, description, ...rest } = props
+  const { children, plans, title, description, align, ...rest } = props
   return (
     <Section id="pricing" {...rest}>
       {/* zIndex ensures title/description remain visible above the grid overlay */}
-      <SectionTitle 
-        title={title} 
+      <SectionTitle
+        title={title}
         description={description}
+        align={align}
         mb={8}
         pos="relative"
         zIndex={1}

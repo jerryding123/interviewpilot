@@ -81,7 +81,7 @@ const handleDownloadClick = () => {
 
 // Hook to detect platform
 const usePlatform = () => {
-  const [platform, setPlatform] = React.useState<'ios' | 'android'>('ios');
+  const [platform, setPlatform] = React.useState<'ios' | 'android' | 'desktop'>('desktop');
 
   React.useEffect(() => {
     const userAgent = navigator.userAgent || navigator.vendor || (window as any).opera;
@@ -93,7 +93,7 @@ const usePlatform = () => {
     } else if (isAndroid) {
       setPlatform('android');
     } else {
-      setPlatform('ios'); // Default to iOS for desktop
+      setPlatform('desktop');
     }
   }, []);
 
@@ -266,7 +266,7 @@ const AppStoreBanner = () => {
           )
         }
       >
-        Try It Now
+        Install Now
       </ButtonLink>
 
     </Box>
@@ -313,7 +313,7 @@ const HeroSection: React.FC = () => {
         <Stack
           direction={{ base: 'column', lg: 'row' }}
           alignItems="center"
-          spacing={{ base: 24, sm: 20, md: 16, lg: 0 }}
+          spacing={{ base: 12, sm: 60, md: 16, lg: 0 }}
         >
           {/* Text content - below video for mobile, left for desktop */}
           <Hero
@@ -400,9 +400,9 @@ const HeroSection: React.FC = () => {
                     colorScheme="primary"
                     color="black"
                     size="lg"
-                    href="/download/hero"
+                    href={platform === 'desktop' ? '#download-options' : '/download/hero'}
                     fontWeight="bold"
-                    onClick={handleDownloadClick}
+                    onClick={platform === 'desktop' ? undefined : handleDownloadClick}
                     borderRadius="full"
                     leftIcon={
                       platform === 'ios' ? (
@@ -412,12 +412,19 @@ const HeroSection: React.FC = () => {
                           height={14}
                           alt="Apple"
                         />
-                      ) : (
+                      ) : platform === 'android' ? (
                         <Image
                           src="/static/images/google_play.png"
                           width={14}
                           height={14}
                           alt="Google Play"
+                        />
+                      ) : (
+                        <Image
+                          src="/static/images/apple_appstore.png"
+                          width={14}
+                          height={14}
+                          alt="Apple"
                         />
                       )
                     }
@@ -508,7 +515,7 @@ const HeroSection: React.FC = () => {
         columns={[1, 2, 3]}
         iconSize={4}
         innerWidth="container.lg"
-        pt="36"
+        pt={{ base: "12", lg: "36" }}
         sx={{
           ".chakra-heading": { fontSize: "2xl" },
           ".chakra-text": { fontSize: "lg" },
@@ -691,12 +698,12 @@ const FeaturesSection = () => {
         title={
           <Heading
             lineHeight="short"
-            fontSize={['2xl', null, '4xl']}
-            textAlign="left"
+            fontSize={['4xl', null, '4xl']}
+            textAlign="center"
             as="p"
             className="main-title"
             sx={{
-              fontSize: { base: '2xl', md: '3xl', lg: '4xl' }
+              fontSize: { base: '4xl', md: '4xl', lg: '4xl' }
             }}
           >
             How to Use
@@ -707,7 +714,7 @@ const FeaturesSection = () => {
             Fully Undetectable. Completely fuss-free and easy to use.
           </>
         }
-        align="left"
+        align="center"
         columns={[1, 2, 3]}
         iconSize={4}
         spacing={14}
@@ -802,11 +809,11 @@ const DownloadOptionsSection = () => {
         <VStack spacing={8} position="relative" zIndex={1}>
           <Heading
             lineHeight="short"
-            fontSize={['2xl', null, '4xl']}
+            fontSize={['4xl', null, '4xl']}
             textAlign="center"
             as="h2"
           >
-            Download Options
+            Download
           </Heading>
           <Text fontSize="lg" color="muted" textAlign="center">
             Choose your platform to download Interview Pilot
@@ -829,8 +836,9 @@ const DownloadOptionsSection = () => {
               <Image
                 src="/static/images/appstore_badge.png"
                 alt="Download on the App Store"
-                width={200}
+                width={180}
                 height={60}
+                style={{ height: '60px', width: 'auto' }}
               />
             </Link>
 
@@ -844,8 +852,9 @@ const DownloadOptionsSection = () => {
               <Image
                 src="/static/images/android_badge.png"
                 alt="Get it on Google Play"
-                width={200}
+                width={180}
                 height={60}
+                style={{ height: '60px', width: 'auto' }}
               />
             </Link>
           </Flex>
@@ -880,6 +889,7 @@ const TestimonialsSection = () => {
         title={testimonials.title}
         columns={[1, 2, 3]}
         innerWidth="container.xl"
+        align="center"
       >
         <>
           {columns.map((column, i) => (
@@ -925,7 +935,7 @@ const PricingSection = () => {
         }
       }}
     >
-      <Pricing {...pricing}>
+      <Pricing {...pricing} align="center">
         <Text p="8" textAlign="center" color="muted" position="relative" zIndex={1}>
           U.S. Dollars. Prices may differ slightly depending on your location.
         </Text>
@@ -944,7 +954,7 @@ const FaqSection = () => {
         }
       }}
     >
-      <Faq {...faq} />
+      <Faq {...faq} align="center" />
     </Box>
   )
 }

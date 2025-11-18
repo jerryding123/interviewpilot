@@ -38,10 +38,30 @@ const Navigation: React.FC<NavigationProps> = ({
     mobileNavBtnRef.current?.focus()
   }, [mobileNav.isOpen])
 
+  // Platform detection for download button
+  const [platform, setPlatform] = React.useState<'ios' | 'android' | 'desktop'>('desktop')
+
+  React.useEffect(() => {
+    const userAgent = navigator.userAgent || navigator.vendor || (window as any).opera
+    const isIOS = /iPad|iPhone|iPod/.test(userAgent) && !(window as any).MSStream
+    const isAndroid = /android/i.test(userAgent)
+
+    if (isIOS) {
+      setPlatform('ios')
+    } else if (isAndroid) {
+      setPlatform('android')
+    } else {
+      setPlatform('desktop')
+    }
+  }, [])
+
   // Split the navigation - everything except the last item (Download)
   const navLinks = siteConfig.header.links.slice(0, -1)
   // Get the Download button (last item)
   const downloadButton = siteConfig.header.links[siteConfig.header.links.length - 1]
+
+  // Modify download button href based on platform
+  const downloadHref = platform === 'desktop' ? '/#download-options' : (downloadButton.href || `/#${downloadButton.id}`)
 
   if (centerLinks) {
     return (
@@ -91,7 +111,7 @@ const Navigation: React.FC<NavigationProps> = ({
           >
             <NavLink
               display={['none', null, 'block']}
-              href={downloadButton.href || `/#${downloadButton.id}`}
+              href={downloadHref}
               borderRadius="full"
               px={4}           // Increase horizontal padding
               py={0}           // Add vertical padding
@@ -131,10 +151,14 @@ const Navigation: React.FC<NavigationProps> = ({
   return (
     <HStack spacing="2" flexShrink={0}>
       {siteConfig.header.links.map(({ href, id, ...props }, i) => {
+        // Check if this is the download button (last item)
+        const isDownloadButton = i === siteConfig.header.links.length - 1
+        const linkHref = isDownloadButton ? downloadHref : (href || `/#${id}`)
+
         return (
           <NavLink
             display={['none', null, 'block']}
-            href={href || `/#${id}`}
+            href={linkHref}
             key={i}
             isActive={
               !!(

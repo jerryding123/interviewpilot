@@ -9,15 +9,15 @@ import { Testimonial } from './testimonial'
 
 export interface TestimonialsProps
   extends Omit<SectionProps, 'title'>,
-    Pick<SectionTitleProps, 'title' | 'description'> {
+    Pick<SectionTitleProps, 'title' | 'description' | 'align'> {
   columns?: ResponsiveValue<number>
 }
 
 export const Testimonials: React.FC<TestimonialsProps> = (props) => {
-  const { children, title, columns = [1, null, 2], ...rest } = props
+  const { children, title, description, align, columns = [1, null, 2], ...rest } = props
   return (
     <Section {...rest}>
-      <SectionTitle title={title} />
+      <SectionTitle title={title} description={description} align={align} />
       <SimpleGrid columns={columns} spacing="8">
         {children}
       </SimpleGrid>
