@@ -102,15 +102,28 @@ export const Footer: React.FC<FooterProps> = (props) => {
           
           {/* Use Wrap for better mobile layout of links */}
           <Stack spacing="4" alignSelf={{ base: "flex-start", md: "flex-end" }}>
-            <Wrap justify={{ base: "flex-start", md: "flex-end" }} spacing="4">
-              {siteConfig.footer?.links?.map(({ href, label }) => (
-                <WrapItem key={href}>
-                  <FooterLink href={href}>
-                    {label}
-                  </FooterLink>
-                </WrapItem>
-              ))}
-            </Wrap>
+            <Stack direction={{ base: "column", md: "row" }} spacing="4" alignItems={{ base: "flex-start", md: "flex-end" }}>
+              {/* Text links */}
+              <Wrap justify={{ base: "flex-start", md: "flex-end" }} spacing="4">
+                {siteConfig.footer?.links?.slice(0, 3).map(({ href, label }) => (
+                  <WrapItem key={href}>
+                    <FooterLink href={href}>
+                      {label}
+                    </FooterLink>
+                  </WrapItem>
+                ))}
+              </Wrap>
+              {/* Social icons */}
+              <Wrap justify={{ base: "flex-start", md: "flex-end" }} spacing="4">
+                {siteConfig.footer?.links?.slice(3).map(({ href, label }) => (
+                  <WrapItem key={href}>
+                    <FooterLink href={href}>
+                      {label}
+                    </FooterLink>
+                  </WrapItem>
+                ))}
+              </Wrap>
+            </Stack>
           </Stack>
         </SimpleGrid>
       </Container>
